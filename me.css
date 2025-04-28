@@ -368,7 +368,7 @@ body {
     width: 32vw;
     border: #444 solid 2px;
     height: 35vh;
-    background: #222;
+    background: #1e2529;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -470,6 +470,8 @@ body {
     font-weight: 600;
     text-decoration: none;
 }
+
+
 
 .project-link:hover {
     text-decoration: underline;
@@ -684,7 +686,7 @@ body {
 .education-item::before {
     content: '';
     position: absolute;
-    top: -2vh; /* Posiciona o pin acima do topo do card */
+    top: -2.5vh; /* Posiciona o pin acima do topo do card */
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajusta para o centro exato */
     width: 4vh; /* Tamanho do pin */
@@ -700,7 +702,7 @@ body {
 .education-item.main-course-item::before {
     width: 4vh; /* Um pouco maior para destacar */
     height: 4vh;
-    top: -2vh; /* Ajuste para corresponder ao tamanho maior */
+    top: -2.5vh; /* Ajuste para corresponder ao tamanho maior */
 }
 
 /* Ajuste para o hover e animação */
@@ -977,11 +979,16 @@ footer {
     font-size: 1.4vw;
 }
 
+.production {
+    font-size: 1.2vw; opacity: 0.6;
+}
+
 /* Responsividade para dispositivos móveis (até 768px) */
 @media (max-width: 768px) {
     /* Reset e Configuração Geral */
     html {
-        font-size: 14px; /* Reduz o tamanho base da fonte */
+        font-size: 4vw;
+
     }
 
     body {
@@ -989,11 +996,23 @@ footer {
         padding: 0;
     }
 
+    h2 {
+        font-size: 8vw;
+    }
+
     /* Header e Navegação */
     .navbar {
-        padding: 10px;
+        
         height: 9vh;
     }
+
+    .logo-text {
+        font-size: 6vw;
+    }
+    .logo-container {
+        width: 70vw; /* Largura fixa maior para suportar fontes largas */
+        display: inline-block;
+      }
 
     .nav-menu {
         display: none; /* Oculta o menu por padrão */
@@ -1002,10 +1021,10 @@ footer {
         top: 9vh;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        background: #1c1f2af2;
         backdrop-filter: blur(10px);
         padding: 0 3vw;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 10px #00000033;
     }
 
     .nav-menu.active {
@@ -1039,11 +1058,40 @@ footer {
         
     }
 
+    .profile-img-container {
+        float: left;
+        width: 30vw;
+        height: 30vw;
+        position: relative;
+      }
+
     .about-content {
         flex-direction: column;
         gap: 20px;
         
     }
+
+    .social-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12vw;
+        height: 12vw;
+        border: #fff solid 2px;
+        border-radius: 20%;
+        color: #fff;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        
+      }
+
+      .social-button i {
+        font-size: 8vw;
+      }
+      .button-container {
+        margin-bottom: 2vh;
+      }
 
     .about-text {
         padding: 0 10px;
@@ -1051,7 +1099,7 @@ footer {
     }
 
     .about-text h2 {
-        font-size: 2rem;
+        font-size: 10vw;
     }
 
     .about-text h3,
@@ -1072,7 +1120,8 @@ footer {
 
     .cta-button,
     .linkedin-icon {
-        font-size: 1rem;
+        font-size: 4vw;
+        border-radius: 2vw;
         padding: 10px 20px;
     }
     #projetos {
@@ -1087,7 +1136,8 @@ footer {
     .project-card {
         width: 100%;
         height: auto;
-        display: flex;
+        padding: 2vw;
+        display: block;
         flex-direction: column;
         position: relative;
         overflow: hidden;
@@ -1095,7 +1145,7 @@ footer {
 
     .project-img {
         width: 100%;
-        height: 200px;
+        height: 30vh;
         object-fit: cover;
     }
 
@@ -1116,13 +1166,35 @@ footer {
         width: 100%;
         background: #1e2529;
         border: #444 solid 0px;
-        padding: 20px;
+
         transform: none;
         transition: opacity 0.3s ease;
         pointer-events: auto;
         z-index: 1;
         display: block; /* Mostra por padrão */
         box-sizing: border-box;
+    }
+
+    .project-title {
+        display: block;
+        
+    }
+    .project-title i {
+        font-size: 8vw;
+    }
+    .project-title h3 {
+        font-size: 5vw;
+        
+    }
+    .project-info p {
+        font-size: 3vw;
+    }
+
+    .hero-lamp {
+        font-size: 2.5vw;
+        color: #fff;
+        width: 8vw;
+        text-align: center;
     }
 
     .project-info .full-desc,
@@ -1140,6 +1212,7 @@ footer {
 
     .expanded-project {
         width: 90vw;
+        padding: 2vw;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -1147,6 +1220,9 @@ footer {
 
     .expanded-img {
         height: 150px;
+    }
+    .expanded-content p {
+        font-size: 3vw;
     }
 
     /* Ensino */
@@ -1160,6 +1236,8 @@ footer {
         gap: 20px;
     }
 
+    
+
     .education-section.main-course-section,
     .education-column,
     .education-item.column-course-item {
@@ -1172,10 +1250,27 @@ footer {
         gap: 10px;
     }
 
+    .education-item, .education-item.main-course-item,.education-item.column-course-item {
+        padding: 5vw;
+    }
+
+    .education-date {
+        font-size: 3vw;
+        color: #bbb;
+        font-family: "opensans", sans-serif;
+    }
+
+    .education-institution {
+        font-size: 4vw;
+        color: #ddd;
+        font-family: "opensans", sans-serif;
+        margin-bottom: 1vh;
+    }
+
     .education-image-slot,
     .education-image-square {
         width: 100%;
-        height: 120px;
+        height: 20vh;
     }
 
     .education-text {
@@ -1243,6 +1338,14 @@ footer {
         text-align: left;
     }
 
+    .contact-info p {
+        font-size: 4vw;
+        margin-bottom: 1.5vh;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+    }
+
     /* Footer */
     footer {
         padding: 10px;
@@ -1250,6 +1353,10 @@ footer {
 
     .copyright {
         font-size: 0.8rem;
+    }
+
+    .production {
+        font-size: 2vw; opacity: 0.6;
     }
 }
 
