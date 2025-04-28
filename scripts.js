@@ -1,3 +1,112 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const logoContainer = document.querySelector('.logo-container');
+    const logoText = document.querySelector('.logo-text');
+    const fullText = 'Diogo Coutinho';
+    const fonts = [
+      'Pacifico',
+      'Lobster',
+      'Cinzel',
+      'Monoton',
+      'Berkshire Swash'
+    ];
+    let currentFontIndex = 0;
+    let intervalId = null;
+    let typingIntervalId = null;
+  
+    function typeText(fontIndex, isErasing = false) {
+      logoText.classList.add('typing');
+      let currentText = logoText.textContent;
+      let index = isErasing ? currentText.length : 0; // Começar do zero ao escrever
+  
+      typingIntervalId = setInterval(() => {
+        if (isErasing) {
+          if (index > 0) {
+            logoText.textContent = fullText.slice(0, index - 1);
+            index--;
+          } else {
+            clearInterval(typingIntervalId);
+            logoText.style.fontFamily = fonts[fontIndex];
+            typeText(fontIndex, false); // Iniciar escrita
+          }
+        } else {
+          if (index < fullText.length) {
+            logoText.textContent = fullText.slice(0, index + 1);
+            index++;
+          } else {
+            clearInterval(typingIntervalId);
+            logoText.classList.remove('typing');
+          }
+        }
+      }, 50); // 50ms por caractere
+    }
+  
+    function startFontCycle() {
+      clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        currentFontIndex = (currentFontIndex + 1) % fonts.length;
+        typeText(currentFontIndex, true); // Iniciar apagando
+      }, 3000); // Ciclo a cada 3 segundos
+    }
+  
+    logoContainer.addEventListener('mouseenter', () => {
+      startFontCycle();
+      typeText(currentFontIndex, true); // Iniciar imediatamente
+    });
+  
+    logoContainer.addEventListener('mouseleave', () => {
+      clearInterval(intervalId);
+      clearInterval(typingIntervalId);
+      logoText.style.fontFamily = 'opensans';
+      logoText.textContent = fullText;
+      logoText.classList.remove('typing');
+      currentFontIndex = 0;
+    });
+  });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const profileImg = document.querySelector('.profile-img');
+    const images = [
+      'diogo.jpg',
+      'diogoDesenho.png',
+      'diogoDisney.png',
+      'diogoFuturista.png',
+      'diogoPintura.png',
+      'diogoAnime.png',
+      'diogoHQs.png',
+      'diogoCartoon.png',
+      'diogoImpressionista.png'
+    ];
+    let currentIndex = 0;
+    let intervalId = null;
+  
+    function changeImage() {
+      profileImg.style.opacity = '0';
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        profileImg.src = images[currentIndex];
+        setTimeout(() => {
+          profileImg.style.opacity = '1';
+        }, 50);
+      }, 500);
+    }
+  
+    // Start cycling images naturally every 6 seconds
+    intervalId = setInterval(changeImage, 4000);
+  
+    profileImg.addEventListener('mouseenter', () => {
+      // Clear slow interval and start fast interval (3x faster)
+      clearInterval(intervalId);
+      changeImage(); // Immediate change on hover
+      intervalId = setInterval(changeImage, 2000); // 6000 / 3 = 2000ms
+    });
+  
+    profileImg.addEventListener('mouseleave', () => {
+      // Clear fast interval and restart slow interval
+      clearInterval(intervalId);
+      intervalId = setInterval(changeImage, 4000);
+    });
+  });
+
 // Função para gerenciar os projetos ativos por linha (desativada em mobile)
 function manageActiveProjects() {
     if (window.innerWidth > 768) {

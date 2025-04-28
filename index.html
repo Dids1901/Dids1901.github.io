@@ -12,38 +12,49 @@
 <body>
     <header>
         <nav class="navbar">
-            <h1 class="logo">
-                 Diogo Coutinho
-            </h1>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#sobre-mim">Sobre Mim</a></li>
-                <li class="nav-item"><a href="#projetos">Projetos</a></li>
-                <li class="nav-item"><a href="#ensino">Formação</a></li>
-                <li class="nav-item"><a href="#habilidades">Habilidades</a></li>
-                <li class="nav-item"><a href="#contato">Contato</a></li>
-            </ul>
+          <h1 class="logo">
+            <div class="logo-container">
+              <span class="logo-text">Diogo Coutinho</span>
+            </div>
+          </h1>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="#sobre-mim">Sobre Mim</a></li>
+            <li class="nav-item"><a href="#projetos">Projetos</a></li>
+            <li class="nav-item"><a href="#ensino">Formação</a></li>
+            <li class="nav-item"><a href="#habilidades">Habilidades</a></li>
+            <li class="nav-item"><a href="#contato">Contato</a></li>
+          </ul>
         </nav>
-    </header>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&family=Cinzel&family=Monoton&family=Berkshire+Swash&family=Open+Sans&display=swap" rel="stylesheet">
+      </header>
 
     <main>
         <section id="sobre-mim" class="section">
             <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>Olá, sou Diogo</h2>
-                        <h3>um entusiasta da tecnologia apaixonado por inovação e impacto</h3>
-                        <p>Meu maior objetivo é deixar um impacto significativo no mundo, criando projetos inovadores que beneficiem o maior número possível de pessoas. Estou comprometido em me dedicar ao máximo e enfrentar qualquer desafio para transformar essa visão em realidade.</p>
-                        <div class="button-container">
-                            <a href="#contato" class="cta-button">Trabalhe Comigo</a>
-                            
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="lampBack.jpg" alt="Background Image" class="background-img">
-                    </div>
+              <div class="about-content">
+                <div class="about-text">
+                  <div class="profile-img-container">
+                    <img src="diogo.jpg" alt="Diogo Portrait" class="profile-img">
+                  </div>
+                  <h2>Olá, sou Diogo</h2>
+                  <h3>um entusiasta da tecnologia apaixonado por inovação e impacto</h3>
+                  <p>Meu maior objetivo é deixar um impacto significativo no mundo, criando projetos inovadores que beneficiem o maior número possível de pessoas. Estou comprometido em me dedicar ao máximo e enfrentar qualquer desafio para transformar essa visão em realidade.</p>
+                  <div class="button-container">
+                    <a href="#contato" class="cta-button">Entre em Contato</a>
+                    <a href="https://linkedin.com/in/diogo-coutinho-" class="social-button" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                      </a>
+                  </div>
                 </div>
+                <div class="about-image">
+                  <video autoplay muted loop playsinline class="background-img">
+                    <source src="coding.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
         <section id="projetos" class="section">
             <div class="container">
                 <h2 id="projects-title">Explore meus Projetos e Criações</h2>
@@ -293,7 +304,6 @@
                             <div class="skill-item"><img src="arduino.png" alt="Arduino" class="skill-icon"><span>Arduino</span></div>
                             <div class="skill-item"><img src="androidStudio.png" alt="Android Studio" class="skill-icon"><span>Android Studio</span></div>
                             <div class="skill-item"><img src="firebase.png" alt="Firebase" class="skill-icon"><span>Firebase</span></div>
-                            <div class="skill-item"><img src="matLab.png" alt="MatLab" class="skill-icon"><span>MatLab</span></div>
                             <div class="skill-item"><img src="excel.png" alt="Excel" class="skill-icon"><span>Excel</span></div>
                             <div class="skill-item"><img src="gimp.png" alt="GIMP" class="skill-icon"><span>GIMP</span></div>
                             <div class="skill-item"><img src="aws.png" alt="AWS" class="skill-icon"><span>AWS</span></div>
@@ -304,7 +314,6 @@
                             <div class="skill-item"><img src="arduino.png" alt="Arduino" class="skill-icon"><span>Arduino</span></div>
                             <div class="skill-item"><img src="androidStudio.png" alt="Android Studio" class="skill-icon"><span>Android Studio</span></div>
                             <div class="skill-item"><img src="firebase.png" alt="Firebase" class="skill-icon"><span>Firebase</span></div>
-                            <div class="skill-item"><img src="matLab.png" alt="MatLab" class="skill-icon"><span>MatLab</span></div>
                             <div class="skill-item"><img src="excel.png" alt="Excel" class="skill-icon"><span>Excel</span></div>
                             <div class="skill-item"><img src="gimp.png" alt="GIMP" class="skill-icon"><span>GIMP</span></div>
                             <div class="skill-item"><img src="aws.png" alt="AWS" class="skill-icon"><span>AWS</span></div>
@@ -334,6 +343,7 @@
 
     <footer>
         <p class="copyright">© 2025 Diogo Musso Coutinho</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Uma produção de  <a href="https://dids1901.github.io" target="_blank" style="color: #f0f0f0;">Diogo Coutinho</a></p>
     </footer>
     <script src="scripts.js"></script>
 </body>
