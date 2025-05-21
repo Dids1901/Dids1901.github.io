@@ -56,202 +56,210 @@
             </div>
           </section>
         <section id="projetos" class="section">
-            <div class="container">
-                <h2 id="projects-title">Explore meus Projetos e Criações</h2>
-                <div class="projects-grid">
-                    <!-- Primeira Linha: Unwind (left) - Website Lodge (right) -->
-                    <div class="project-card left-card row-1" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="unwindPage.png" alt="Aplicativo Unwind" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <img src="trueUnwind.png" alt="Unwind Logo" class="hero-lamp">
-                                <h3 style="font-family: hamster; color: #004aad; font-size: 2rem;">Unwind</h3>
-                            </div>
-                            <p class="short-desc">Comunidade para filmes, séries e games.</p>
-                            <p class="full-desc" style="display: none;">O Unwind é um aplicativo social para filmes, séries e jogos. Inicialmente desenvolvido em Java com Android Studio, foi refatorado para React Native, tornando-se multiplataforma. O app combina elementos de rede social, como perfis, posts, curtidas e comentários, com organização de mídias e um sistema avançado de recomendações baseado no consumo do usuário. Para coletar as informações das mídias, utilizei Web Scraping em Python para listar as mais relevantes e, em seguida, integrei as APIs do TMDB e IGDB para obter detalhes completos. Após essa etapa, todos os dados foram armazenados no Firebase, que serve como banco de dados principal do app. Além do aplicativo, desenvolvi uma landing page e toda a identidade visual no GIMP.</p>
-                            <a href="https://unwind.com.br" target="_blank" class="project-link">Visitar Site</a>
-                        </div>
+    <div class="container">
+        <h2 id="projects-title">Explore meus Projetos e Criações</h2>
+        <div class="projects-grid">
+            <!-- Primeira Linha: Unwind (left) - Flavia Advocacia (right) -->
+            <div class="project-card left-card row-1" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="unwindPage.png" alt="Aplicativo Unwind" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <img src="trueUnwind.png" alt="Unwind Logo" class="hero-lamp">
+                        <h3 style="font-family: hamster; color: #004aad; font-size: 2rem;">Unwind</h3>
                     </div>
-                    <div class="project-card right-card row-1" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="website.png" alt="Website Lodge" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <i class="fas fa-globe hero-lamp"></i>
-                                <h3>Website Lodge</h3>
-                            </div>
-                            <p class="short-desc">Site responsivo para empresa Lodge Engenharia.</p>
-                            <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Lodge Engenharia, meu primeiro trabalho profissional. O site apresenta a empresa, seus serviços e portfólio de projetos concluídos, garantindo uma navegação intuitiva. Criado com HTML, CSS e JavaScript, possui um design responsivo e moderno, oferecendo uma presença digital mais profissional à empresa.</p>
-                            <a href="https://lodge.com.br" target="_blank" class="project-link">Visitar Site</a>
-                        </div>
-                    </div>
-                    <!-- Segunda Linha: Sudoku (left) - Arduino (right) -->
-                    <div class="project-card left-card row-2" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="sudoku.png" alt="Solucionador de Sudoku" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <i class="fas fa-th hero-lamp"></i>
-                                <h3>Solucionador de Sudoku</h3>
-                            </div>
-                            <p class="short-desc">Solucionador automático de Sudoku.</p>
-                            <p class="full-desc" style="display: none;">Desenvolvi um solucionador de Sudoku em Python como desafio pessoal, exigindo raciocínio lógico e programação avançada. O software analisa as regras do jogo e resolve qualquer tabuleiro automaticamente. Para facilitar o uso, criei uma interface gráfica com Tkinter, permitindo que os usuários insiram os números manualmente e obtenham a solução de forma interativa.</p>
-                        </div>
-                    </div>
-                    <div class="project-card right-card row-2" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="carrinho.png" alt="Carrinho Arduino" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <i class="fas fa-robot hero-lamp"></i>
-                                <h3>Carrinho com Garras</h3>
-                            </div>
-                            <p class="short-desc">Carrinho robótico com Bluetooth.</p>
-                            <p class="full-desc" style="display: none;">Construí um carrinho robótico com uma garra acoplada, utilizando um kit da EletroGate como base, mas realizando modificações para otimizar sua eficiência. Integrei um módulo Bluetooth HC-05 para controle via celular com o aplicativo Dabble. O projeto envolveu programação em Arduino, montagem de circuitos e adaptação de componentes como motores, microservo e módulo ponte H L298N.</p>
-                        </div>
-                    </div>
-                    <!-- Terceira Linha: WhatsApp (left) - Gerenciador de Senhas (right) -->
-                    <div class="project-card left-card row-3" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="whatsapp.webp" alt="Automação WhatsApp" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <i class="fab fa-whatsapp hero-lamp" style="color: #00e510;"></i>
-                                <h3>Automação WhatsApp</h3>
-                            </div>
-                            <p class="short-desc">Automação de tarefas no WhatsApp.</p>
-                            <p class="full-desc" style="display: none;">Utilizando Python, Selenium e Web Scraping, desenvolvi um sistema para automatizar o envio de mensagens no WhatsApp. O usuário pode definir uma lista de contatos, programar mensagens e escolher horários para envio automático. Esse projeto me introduziu à automação da web, conhecimento que apliquei posteriormente em projetos como conversores de moeda, extração de dados do LinkedIn e coleta das mídias mais relevantes para usar no Unwind.</p>
-                        </div>
-                    </div>
-                    <div class="project-card right-card row-3" data-expanded="false">
-                        <div class="project-overlay"></div>
-                        <img src="password.jpg" alt="Gerenciador de Senhas" class="project-img">
-                        <div class="project-info">
-                            <div class="project-title">
-                                <i class="fas fa-lock hero-lamp"></i>
-                                <h3>Gerenciador de Senhas</h3>
-                            </div>
-                            <p class="short-desc">Armazena, vincula e gera senhas pessoais. </p>
-                            <p class="full-desc" style="display: none;">Desenvolvi um gerenciador de senhas em JavaScript com SQL, permitindo criação, edição e exclusão de senhas, além de um gerador personalizado onde o usuário define critérios como números, letras e caracteres especiais. Também implementei um sistema de vinculação de senhas a contas específicas. O projeto foi meu primeiro contato com bancos de dados e segurança digital.</p>
-                        </div>
-                    </div>
+                    <p class="short-desc">Comunidade para filmes, séries e games.</p>
+                    <p class="full-desc" style="display: none;">O Unwind é um aplicativo social para filmes, séries e jogos. Inicialmente desenvolvido em Java com Android Studio, foi refatorado para React Native, tornando-se multiplataforma. O app combina elementos de rede social, como perfis, posts, curtidas e comentários, com organização de mídias e um sistema avançado de recomendações baseado no consumo do usuário. Para coletar as informações das mídias, utilizei Web Scraping em Python para listar as mais relevantes e, em seguida, integrei as APIs do TMDB e IGDB para obter detalhes completos. Após essa etapa, todos os dados foram armazenados no Firebase, que serve como banco de dados principal do app. Além do aplicativo, desenvolvi uma landing page e toda a identidade visual no GIMP.</p>
+                    <a href="https://unwind.com.br" target="_blank" class="project-link">Visitar Site</a>
                 </div>
             </div>
-        </section>
+
+            <div class="project-card right-card row-1" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="flaviaSite.png" alt="Website Flavia Advocacia" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <i class="fas fa-scale-balanced hero-lamp"></i>
+                        <h3>Flávia Advocacia</h3>
+                    </div>
+                    <p class="short-desc">Site completo para escritório de advocacia.</p>
+                    <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Flávia Coutinho Advocacia, focando em responsividade, identidade visual profissional e funcionalidade prática para clientes. O site inclui páginas de apresentação, áreas de atuação e um formulário de contato funcional. Fui responsável desde a criação até a compra e gerenciamento de domínio, hospedagem e configuração de e-mail profissional.</p>
+                    <a href="https://flaviacoutinhoadvocacia.com.br" target="_blank" class="project-link">Visitar Site</a>
+                </div>
+            </div>
+
+            <!-- Segunda Linha: Website Lodge (left) - Sudoku (right) -->
+            <div class="project-card left-card row-2" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="website.png" alt="Website Lodge" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <i class="fas fa-globe hero-lamp"></i>
+                        <h3>Website Lodge</h3>
+                    </div>
+                    <p class="short-desc">Site responsivo para empresa Lodge Engenharia.</p>
+                    <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Lodge Engenharia, meu primeiro trabalho profissional. O site apresenta a empresa, seus serviços e portfólio de projetos concluídos, garantindo uma navegação intuitiva. Criado com HTML, CSS e JavaScript, possui um design responsivo e moderno, oferecendo uma presença digital mais profissional à empresa.</p>
+                    <a href="https://lodge.com.br" target="_blank" class="project-link">Visitar Site</a>
+                </div>
+            </div>
+
+            <div class="project-card right-card row-2" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="sudoku.png" alt="Solucionador de Sudoku" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <i class="fas fa-th hero-lamp"></i>
+                        <h3>Solucionador de Sudoku</h3>
+                    </div>
+                    <p class="short-desc">Solucionador automático de Sudoku.</p>
+                    <p class="full-desc" style="display: none;">Desenvolvi um solucionador de Sudoku em Python como desafio pessoal, exigindo raciocínio lógico e programação avançada. O software analisa as regras do jogo e resolve qualquer tabuleiro automaticamente. Para facilitar o uso, criei uma interface gráfica com Tkinter, permitindo que os usuários insiram os números manualmente e obtenham a solução de forma interativa.</p>
+                </div>
+            </div>
+
+            <!-- Terceira Linha: Carrinho Arduino (left) - WhatsApp (right) -->
+            <div class="project-card left-card row-3" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="carrinho.png" alt="Carrinho Arduino" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <i class="fas fa-robot hero-lamp"></i>
+                        <h3>Carrinho com Garras</h3>
+                    </div>
+                    <p class="short-desc">Carrinho robótico com Bluetooth.</p>
+                    <p class="full-desc" style="display: none;">Construí um carrinho robótico com uma garra acoplada, utilizando um kit da EletroGate como base, mas realizando modificações para otimizar sua eficiência. Integrei um módulo Bluetooth HC-05 para controle via celular com o aplicativo Dabble. O projeto envolveu programação em Arduino, montagem de circuitos e adaptação de componentes como motores, microservo e módulo ponte H L298N.</p>
+                </div>
+            </div>
+
+            <div class="project-card right-card row-3" data-expanded="false">
+                <div class="project-overlay"></div>
+                <img src="whatsapp.webp" alt="Automação WhatsApp" class="project-img">
+                <div class="project-info">
+                    <div class="project-title">
+                        <i class="fab fa-whatsapp hero-lamp" style="color: #00e510;"></i>
+                        <h3>Automação WhatsApp</h3>
+                    </div>
+                    <p class="short-desc">Automação de tarefas no WhatsApp.</p>
+                    <p class="full-desc" style="display: none;">Utilizando Python, Selenium e Web Scraping, desenvolvi um sistema para automatizar o envio de mensagens no WhatsApp. O usuário pode definir uma lista de contatos, programar mensagens e escolher horários para envio automático. Esse projeto me introduziu à automação da web, conhecimento que apliquei posteriormente em projetos como conversores de moeda, extração de dados do LinkedIn e coleta das mídias mais relevantes para usar no Unwind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
         <section id="ensino" class="section">
-            <div class="container">
-                <h2 id="education-title">Minha Formação Acadêmica e Cursos</h2>
-                <div class="education-wrapper">
-                    <!-- Parte Superior: Curso Maior e Contêiner de Coluna -->
-                    <div class="education-top">
-                        <!-- Curso Maior (esquerda) -->
-                        <div class="education-section main-course-section">
-                            <div class="education-item main-course-item">
-                                <div class="education-header">
-                                    <h4>Bacharelado em Engenharia da Computação</h4>
-                                    <span class="education-date">2023 2027</span>
-                                </div>
-                                <div class="education-image-slot">
-                                    <img src="maua-campus.jpg" alt="">
-                                </div>
-                                <p class="education-institution">Instituto Máua de Tecnologia</p>
-                                <p class="education-description">
-                                    Aqui aprofundei meus conhecimentos em programação (Python, Java, C), estrutura de dados e arquitetura de computadores, além de circuitos eletrônicos e matemática computacional para modelagem e análise de dados. Também estudei Cálculo e Álgebra Linear, essenciais para a resolução de problemas computacionais.
-                                </p>
-                            </div>
+    <div class="container">
+        <h2 id="education-title">Minha Formação Acadêmica e Cursos</h2>
+        <div class="education-wrapper">
+            <!-- Parte Superior: Curso Maior e Contêiner de Coluna -->
+            <div class="education-top">
+                <!-- Curso Maior (esquerda) -->
+                <div class="education-section main-course-section">
+                    <div class="education-item main-course-item">
+                        <div class="education-header">
+                            <h4>Bacharelado em Engenharia da Computação</h4>
+                            <span class="education-date">2023 2027</span>
                         </div>
-                        <!-- Contêiner de Coluna com Dois Cursos (direita) -->
-                        <div class="education-column">
-                            <!-- Curso 2 -->
-                            <div class="education-item column-course-item">
-                                <div class="education-header">
-                                    <h4>Google Cloud Computing Foundations</h4>
-                                    <span class="education-date">2024</span>
-                                </div>
-                                <div class="education-content">
-                                    <div class="education-image-square">
-                                        <img src="googleCloudImg.webp" alt="">
-                                    </div>
-                                    <div class="education-text">
-                                        <p class="education-institution">Google - 40 horas</p>
-                                        <p class="education-description">
-                                            Nesse curso, aprendi os fundamentos da computação em nuvem, incluindo infraestrutura, armazenamento, redes e segurança no Google Cloud. Explorei bancos de dados gerenciados, machine learning na nuvem e escalabilidade de aplicações, entendendo como integrar e otimizar serviços na plataforma.
-                                        </p>
-                                    </div>
-                                </div>
+                        <div class="education-image-slot">
+                            <img src="maua-campus.jpg" alt="">
+                        </div>
+                        <p class="education-institution">Instituto Máua de Tecnologia</p>
+                        <p class="education-description">
+                            Aqui aprofundei meus conhecimentos em programação (Python, Java, C), estrutura de dados e arquitetura de computadores, além de circuitos eletrônicos e matemática computacional para modelagem e análise de dados. Também estudei Cálculo e Álgebra Linear, essenciais para a resolução de problemas computacionais.
+                        </p>
+                    </div>
+                </div>
+                <!-- Contêiner de Coluna com Dois Cursos (direita) -->
+                <div class="education-column">
+                    <!-- Curso 2 (agora Cisco) -->
+                    <div class="education-item column-course-item">
+                        <div class="education-header">
+                            <h4>Fundamentos de Redes</h4>
+                            <span class="education-date">2025</span>
+                        </div>
+                        <div class="education-content">
+                            <div class="education-image-square">
+                                <img src="cisco.png" alt="">
                             </div>
-                            <!-- Curso 3 -->
-                            <div class="education-item column-course-item">
-                                <div class="education-header">
-                                    <h4>AWS Academy Cloud Foundations</h4>
-                                    <span class="education-date">2024</span>
-                                </div>
-                                <div class="education-content">
-                                    <div class="education-image-square">
-                                        <img src="aws.webp" alt="">
-                                    </div>
-                                    <div class="education-text">
-                                        <p class="education-institution">AWS - 20 horas</p>
-                                        <p class="education-description">
-                                            No curso, aprendi os conceitos essenciais da computação em nuvem, incluindo arquitetura AWS, armazenamento, redes, segurança e escalabilidade de aplicações. Explorei serviços como EC2, S3, RDS e Lambda, entendendo como projetar soluções eficientes e seguras na nuvem.
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="education-text">
+                                <p class="education-institution">Cisco Networking Academy - 70 horas</p>
+                                <p class="education-description">
+                                    No curso, aprendi os princípios das redes, explorando dispositivos, mídias e protocolos de comunicação. Desenvolvi também habilidades para identificar e resolver problemas básicos, com foco na certificação Cisco CCST.
+                                </p>
                             </div>
                         </div>
                     </div>
-        
-                    <!-- Parte Inferior: Três Cursos em Linha -->
-                    <div class="education-bottom">
-                        <div class="courses-row">
-                            <!-- Curso 4 (Fictício) -->
-                            <div class="education-item">
-                                <div class="education-header">
-                                    <h4>Creating a Modal that Predicts Home Prices</h4>
-                                    <span class="education-date">2024</span>
-                                </div>
-                                <div class="education-image-slot">
-                                    <img src="machineLearning.jpg" alt="">
-                                </div>
-                                <p class="education-institution">CodeAcademy - 20 horas</p>
-                                <p class="education-description">
-                                    Nesse curso, aprendi a desenvolver um modelo de Machine Learning para prever preços de casas com base em variáveis como localização e número de quartos. Utilizei Scikit-Learn para treinar e avaliar o modelo, aplicando técnicas de pré-processamento de dados e regressão.
-                                </p>
+                    <!-- Curso 3 (agora Google Cloud) -->
+                    <div class="education-item column-course-item">
+                        <div class="education-header">
+                            <h4>Google Cloud Computing Foundations</h4>
+                            <span class="education-date">2024</span>
+                        </div>
+                        <div class="education-content">
+                            <div class="education-image-square">
+                                <img src="googleCloudImg.webp" alt="">
                             </div>
-                            <!-- Curso 5 (Fictício) -->
-                            <div class="education-item">
-                                <div class="education-header">
-                                    <h4>Automação e Controle com Arduino</h4>
-                                    <span class="education-date">2023</span>
-                                </div>
-                                <div class="education-image-slot">
-                                    <img src="arduinoImg.webp" alt="">
-                                </div>
-                                <p class="education-institution">IMT - 40 horas</p>
+                            <div class="education-text">
+                                <p class="education-institution">Google - 40 horas</p>
                                 <p class="education-description">
-                                    No curso, aprendi a programar e integrar componentes com Arduino, trabalhando com sensores, motores, displays e Bluetooth para desenvolver circuitos interativos. Também aprimorei habilidades em C para microcontroladores, explorando automação e controle de dispositivos.
-                                </p>
-                            </div>
-                            <!-- Curso 6 (Fictício) -->
-                            <div class="education-item">
-                                <div class="education-header">
-                                    <h4>Responsive Web Design</h4>
-                                    <span class="education-date">2023</span>
-                                </div>
-                                <div class="education-image-slot">
-                                    <img src="webDevelopment.jpg" alt="">
-                                </div>
-                                <p class="education-institution">FreeCodeCamp - 30 horas</p>
-                                <p class="education-description">
-                                    Nesse curso, aprendi a criar interfaces web modernas e adaptáveis utilizando HTML e CSS. Desenvolvi layouts responsivos, explorei flexbox e grid, e aprimorei a acessibilidade e usabilidade de páginas para diferentes dispositivos.
+                                    Nesse curso, aprendi os fundamentos da computação em nuvem, incluindo infraestrutura, armazenamento, redes e segurança no Google Cloud. Explorei bancos de dados gerenciados, machine learning na nuvem e escalabilidade de aplicações, entendendo como integrar e otimizar serviços na plataforma.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Parte Inferior: Três Cursos em Linha -->
+            <div class="education-bottom">
+                <div class="courses-row">
+                    <!-- Curso 4 (agora AWS) -->
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>AWS Academy Cloud Foundations</h4>
+                            <span class="education-date">2024</span>
+                        </div>
+                        <div class="education-image-slot">
+                            <img src="aws.webp" alt="">
+                        </div>
+                        <p class="education-institution">AWS - 20 horas</p>
+                        <p class="education-description">
+                            No curso, aprendi os conceitos essenciais da computação em nuvem, incluindo arquitetura AWS, armazenamento, redes, segurança e escalabilidade de aplicações. Explorei serviços como EC2, S3, RDS e Lambda, entendendo como projetar soluções eficientes e seguras na nuvem.
+                        </p>
+                    </div>
+                    <!-- Curso 5 -->
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>Automação e Controle com Arduino</h4>
+                            <span class="education-date">2023</span>
+                        </div>
+                        <div class="education-image-slot">
+                            <img src="arduinoImg.webp" alt="">
+                        </div>
+                        <p class="education-institution">IMT - 40 horas</p>
+                        <p class="education-description">
+                            No curso, aprendi a programar e integrar componentes com Arduino, trabalhando com sensores, motores, displays e Bluetooth para desenvolver circuitos interativos. Também aprimorei habilidades em C para microcontroladores, explorando automação e controle de dispositivos.
+                        </p>
+                    </div>
+                    <!-- Curso 6 -->
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>Responsive Web Design</h4>
+                            <span class="education-date">2023</span>
+                        </div>
+                        <div class="education-image-slot">
+                            <img src="webDevelopment.jpg" alt="">
+                        </div>
+                        <p class="education-institution">FreeCodeCamp - 30 horas</p>
+                        <p class="education-description">
+                            Nesse curso, aprendi a criar interfaces web modernas e adaptáveis utilizando HTML e CSS. Desenvolvi layouts responsivos, explorei flexbox e grid, e aprimorei a acessibilidade e usabilidade de páginas para diferentes dispositivos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
         
         <div class="expanded-project" style="display: none;">
             <div class="expanded-content">
@@ -328,7 +336,12 @@
             <div class="container-contato">
                 <h2>Entre em Contato</h2>
                 <p class="contact-subtitle">Gostaria de colaborar ou discutir uma oportunidade? Estou à disposição!</p>
-                
+                <a href="https://wa.me/5511996931901?text=Olá!%20Gostaria%20de%20conversar%20com%20você%20sobre%20uma%20oportunidade." 
+   target="_blank" 
+   class="cta-button-contato whatsapp-button">
+   <i class="fab fa-whatsapp"></i> Fale comigo no WhatsApp
+</a>
+
                 
                 
             </div>

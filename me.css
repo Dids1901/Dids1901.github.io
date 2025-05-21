@@ -933,12 +933,13 @@ body {
 
 .contact-info {
     margin-top: 4vh;
+    align-items: center;
     text-align: left;
 }
 
 .contact-info p {
     font-size: 1.4vw;
-    margin-bottom: 1.5vh;
+    margin-top: 5vh;
     align-items: center;
     justify-content: center;
     gap: 1vw;
@@ -954,6 +955,21 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
+.whatsapp-button {
+    background-color: #25D366;
+    border: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebd5a;
+    transform: translateY(-1vh);
+}
+
 
 @keyframes pulse {
     0% {
