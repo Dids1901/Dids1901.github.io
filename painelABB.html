@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Monitoramento Industrial</title>
+    <link rel="stylesheet" href="stylesABB.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo da Empresa" id="empresa-logo">
+            </div>
+            <div class="header-actions">
+                <button class="icon-button" id="emitir-aviso-btn" title="Emitir Aviso Sonoro">
+                    <i class="fas fa-bullhorn"></i>
+                </button>
+                <button class="icon-button" id="notifications-btn" title="Notificações">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="icon-button" id="settings-btn" title="Configurações">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="icon-button" id="logout-btn" title="Sair">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <nav class="dashboard-nav">
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="inicio"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#" class="nav-link" data-target="historico"><i class="fas fa-chart-line"></i> Histórico</a></li>
+                <li><a href="#" class="nav-link" data-target="equipes"><i class="fas fa-users"></i> Equipes</a></li>
+                <li><a href="#" class="nav-link" data-target="cameras"><i class="fas fa-video"></i> Câmeras</a></li>
+                <li><a href="#" class="nav-link" data-target="planta-baixa"><i class="fas fa-map-marked-alt"></i> Mapa</a></li>
+            </ul>
+            <div class="nav-logout-section">
+                <button id="nav-logout-btn" class="nav-logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+            <div class="nav-copyright-section">
+                <p>Uma produção de <a href="https://dids1901.github.io" target="_blank" rel="noopener noreferrer">Diogo Coutinho</a></p>
+            </div>
+        </nav>
+
+        <main class="dashboard-main">
+            <section id="inicio" class="content-section active">
+                <h2>Visão Geral</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Conformidade Geral</h3>
+                        <p class="stat-value" id="geral-conformidade-valor">92%</p>
+                        <span class="stat-change positive" id="geral-conformidade-variacao">+2% desde ontem</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Alertas Hoje</h3>
+                        <p class="stat-value" id="geral-alertas-valor">5</p>
+                        <span class="stat-change negative" id="geral-alertas-variacao">+1 desde ontem</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Equipes em Meta</h3>
+                        <p class="stat-value" id="geral-equipes-meta-valor">4/5</p>
+                    </div>
+                </div>
+
+                <div class="inicio-visao-detalhada">
+                    <div class="grafico-card">
+                        <h3><i class="fas fa-chart-pie"></i> Alertas por Tipo (Mês Atual)</h3>
+                        <div id="grafico-alertas-tipo" class="placeholder-grafico">
+                          
+                        </div>
+                    </div>
+                    
+                    <div class="dados-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Não Conformidades Mais Frequentes</h3>
+                        <ul id="lista-nao-conformidades-inicio">
+                            <li>Carregando...</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dados-card">
+                        <h3><i class="fas fa-star"></i> Destaques e Melhorias Recentes</h3>
+                        <ul id="lista-destaques-inicio">
+                            <li><i class="fas fa-check-circle icon-success"></i> Novo treinamento de EPIs concluído para todas as equipes.</li>
+                            <li><i class="fas fa-wrench icon-warning"></i> Manutenção preventiva da Câmera 03 agendada para 25/05.</li>
+                            <li><i class="fas fa-award icon-info"></i> Equipe Alfa atinge 30 dias consecutivos acima da meta de conformidade!</li>
+                            <li><i class="fas fa-cogs icon-primary"></i> Atualização do software v1.2 com novas heurísticas de detecção.</li>
+                        </ul>
+                    </div>
+
+                    <div class="grafico-card">
+                        <h3><i class="fas fa-chart-line"></i> Tendência de Conformidade (Últimos 7 dias)</h3>
+                        <div id="grafico-tendencia-conformidade" class="placeholder-grafico">
+                         
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>Ações Rápidas</h3>
+                    <button class="action-btn"><i class="fas fa-flag"></i> Reportar Incidente Manual</button>
+                    <button class="action-btn"><i class="fas fa-eye"></i> Revisar Alertas Críticos</button>
+                </div>
+            </section>
+
+            <section id="historico" class="content-section">
+                <h2>Histórico de Conformidade</h2>
+
+                <div class="historico-controles">
+                    <div class="controle-grupo">
+                        <label for="seletor-equipe-historico">Selecionar Equipe:</label>
+                        <select id="seletor-equipe-historico">
+                        
+                        </select>
+                    </div>
+                    <div class="controle-grupo navegacao-calendario">
+                        <button id="mes-anterior-btn"><i class="fas fa-chevron-left"></i> Mês Anterior</button>
+                        <span id="mes-ano-display">Maio 2025</span>
+                        <button id="proximo-mes-btn">Próximo Mês <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="calendario-container">
+                    <div class="calendario-header">
+                        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+                    </div>
+                    <div id="calendario-grid" class="calendario-grid">
+                       
+                    </div>
+                </div>
+
+                <div id="detalhe-dia-container" class="detalhe-dia-container" style="display: none;">
+                    <h3 id="detalhe-dia-titulo">Detalhes do Dia</h3>
+                    <div id="grafico-conformidade-dia" class="grafico-conformidade-dia">
+                   
+                    </div>
+                    <div id="info-dia-adicional" class="info-dia-adicional">
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="equipes" class="content-section">
+                <h2>Status das Equipes</h2>
+                <div id="lista-equipes">
+                  
+                </div>
+            </section>
+
+            <section id="cameras" class="content-section">
+                <h2>Monitoramento por Câmeras (Ao Vivo)</h2>
+                <div class="camera-grid">
+                    <div class="camera-feed">
+                        <video id="video1" src="videos/video1.mp4" autoplay muted loop playsinline poster="img/placeholder_video.png" aria-label="Feed Câmera 1"></video>
+                        <div class="camera-info">
+                            <p>Câmera 01 - Portão Principal</p>
+                            <div class="filter-switch-container">
+                                <input type="checkbox" id="filter-switch-video1" class="filter-switch" data-video-id="video1" data-original-src="videos/video1.mp4" data-filtered-src="videos/video_com_filtro1.mp4">
+                                <label for="filter-switch-video1" class="filter-switch-label">SW</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="camera-feed">
+                        <video id="video2" src="videos/video2.mp4" autoplay muted loop playsinline poster="img/placeholder_video.png" aria-label="Feed Câmera 2"></video>
+                        <div class="camera-info">
+                            <p>Câmera 02 - Linha de Montagem A</p>
+                            <div class="filter-switch-container">
+                                <input type="checkbox" id="filter-switch-video2" class="filter-switch" data-video-id="video2" data-original-src="videos/video2.mp4" data-filtered-src="videos/video_com_filtro2.mp4">
+                                <label for="filter-switch-video2" class="filter-switch-label">SW</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="camera-feed">
+                        <video id="video3" src="videos/video3.mp4" autoplay muted loop playsinline poster="img/placeholder_video.png" aria-label="Feed Câmera 3"></video>
+                        <div class="camera-info">
+                            <p>Câmera 03 - Depósito</p>
+                            <div class="filter-switch-container">
+                                <input type="checkbox" id="filter-switch-video3" class="filter-switch" data-video-id="video3" data-original-src="videos/video3.mp4" data-filtered-src="videos/video_com_filtro_3.mp4">
+                                <label for="filter-switch-video3" class="filter-switch-label">SW</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="camera-feed">
+                        <video id="video4" src="videos/camera4.mp4" autoplay muted loop playsinline poster="img/placeholder_video.png" aria-label="Feed Câmera 4"></video>
+                        <div class="camera-info">
+                            <p>Câmera 04 - Área de Solda</p>
+                            <div class="filter-switch-container">
+                                <input type="checkbox" id="filter-switch-video4" class="filter-switch" data-video-id="video4" data-original-src="videos/camera4.mp4" data-filtered-src="videos/camera_com_filtro4.mp4">
+                                <label for="filter-switch-video4" class="filter-switch-label">SW</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="planta-baixa" class="content-section">
+                <h2>Mapa Interativo</h2>
+                <div class="planta-baixa-controles">
+                    <input type="checkbox" id="toggle-cameras-mapa" checked>
+                    <label for="toggle-cameras-mapa"><i class="fas fa-video"></i> Mostrar Câmeras</label>
+
+                    <input type="checkbox" id="toggle-colaboradores-mapa" checked>
+                    <label for="toggle-colaboradores-mapa"><i class="fas fa-users"></i> Mostrar Colaboradores</label>
+
+                    <input type="checkbox" id="toggle-zonas-perigo-mapa" checked>
+                    <label for="toggle-zonas-perigo-mapa"><i class="fas fa-exclamation-triangle"></i> Mostrar Zonas de Perigo</label>
+                </div>
+                <div id="mapa-fabrica-container">
+                    <p class="mapa-loading-text">Carregando planta baixa...</p>
+                    
+                </div>
+                <div class="planta-baixa-legenda">
+                    <h4>Legenda:</h4>
+                    <div class="legenda-itens">
+                        <div><i class="fas fa-video item-camera"></i> Câmera</div>
+                        <div><span class="item-zona-perigo-legenda"></span> Zona de Perigo</div>
+                        <div><span class="item-area-legenda"></span> Área/Setor</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scriptABB.js"></script>
+</body>
+</html>

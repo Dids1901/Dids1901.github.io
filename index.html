@@ -20,10 +20,17 @@
           <ul class="nav-menu">
             <li class="nav-item"><a href="#sobre-mim">Sobre Mim</a></li>
             <li class="nav-item"><a href="#projetos">Projetos</a></li>
-            <li class="nav-item"><a href="#ensino">Formação</a></li>
-            <li class="nav-item"><a href="#habilidades">Habilidades</a></li>
+            <li class="nav-item dropdown"> <a href="#">Qualificações <i class="fas fa-caret-down"></i></a> 
+                <ul class="dropdown-menu"> 
+                    
+                    <li class="nav-item"><a href="#competicoes">Competições</a></li>
+                    <li class="nav-item"><a href="#ensino">Formação</a></li>
+                    <li class="nav-item"><a href="#habilidades">Habilidades</a></li>
+                    
+                </ul>
+            </li>
             <li class="nav-item"><a href="#contato">Contato</a></li>
-          </ul>
+        </ul>
         </nav>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&family=Cinzel&family=Monoton&family=Berkshire+Swash&family=Open+Sans&display=swap" rel="stylesheet">
       </header>
@@ -31,146 +38,253 @@
     <main>
         <section id="sobre-mim" class="section">
             <div class="container">
-              <div class="about-content">
-                <div class="about-text">
-                  <div class="profile-img-container">
-                    <img src="diogo.jpg" alt="Diogo Portrait" class="profile-img">
-                  </div>
-                  <h2>Olá, sou Diogo</h2>
-                  <h3>um entusiasta da tecnologia apaixonado por inovação e impacto</h3>
-                  <p>Meu maior objetivo é deixar um impacto significativo no mundo, criando projetos inovadores que beneficiem o maior número possível de pessoas. Estou comprometido em me dedicar ao máximo e enfrentar qualquer desafio para transformar essa visão em realidade.</p>
-                  <div class="button-container">
-                    <a href="#contato" class="cta-button">Entre em Contato</a>
-                    <a href="https://linkedin.com/in/diogo-coutinho-" class="social-button" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                      </a>
-                  </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="profile-img-container">
+                            <img src="diogo.jpg" alt="Diogo Portrait" class="profile-img">
+                        </div>
+                        <h2>Olá, sou Diogo</h2>
+                        <h3>um entusiasta da tecnologia apaixonado por inovação e impacto</h3>
+                        <p>Meu maior objetivo é deixar um impacto significativo no mundo, criando projetos inovadores que beneficiem o maior número possível de pessoas. Estou comprometido em me dedicar ao máximo e enfrentar qualquer desafio para transformar essa visão em realidade.</p>
+                        <div class="button-container">
+                            <a href="#contato" class="cta-button">Entre em Contato</a>
+                            <a href="https://linkedin.com/in/diogo-coutinho-" class="social-button" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                              </a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <video autoplay muted loop playsinline class="background-img">
+                            <source src="coding.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
-                <div class="about-image">
-                  <video autoplay muted loop playsinline class="background-img">
-                    <source src="coding.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
             </div>
-          </section>
+        </section>
+        
         <section id="projetos" class="section">
+            <div class="container">
+                <h2 id="projects-title">Explore meus Projetos e Criações</h2>
+                <div class="projects-grid">
+                    <div class="project-card left-card row-1" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="unwindPage.png" alt="Aplicativo Unwind" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <img src="trueUnwind.png" alt="Unwind Logo" class="hero-lamp">
+                                <h3 style="font-family: hamster; color: #004aad; font-size: 2rem;">Unwind</h3>
+                            </div>
+                            <p class="short-desc">Comunidade para filmes, séries e games.</p>
+                            <p class="full-desc" style="display: none;">O Unwind é um aplicativo social para filmes, séries e jogos. Inicialmente desenvolvido em Java com Android Studio, foi refatorado para React Native, tornando-se multiplataforma. O app combina elementos de rede social, como perfis, posts, curtidas e comentários, com organização de mídias e um sistema avançado de recomendações baseado no consumo do usuário. Para coletar as informações das mídias, utilizei Web Scraping em Python para listar as mais relevantes e, em seguida, integrei as APIs do TMDB e IGDB para obter detalhes completos. Após essa etapa, todos os dados foram armazenados no Firebase, que serve como banco de dados principal do app. Além do aplicativo, desenvolvi uma landing page e toda a identidade visual no GIMP.</p>
+                            <a href="https://unwind.com.br" target="_blank" class="project-link">Visitar Site</a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card right-card row-1" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="flaviaSite.png" alt="Website Flavia Advocacia" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <i class="fas fa-scale-balanced hero-lamp"></i>
+                                <h3>Flávia Advocacia</h3>
+                            </div>
+                            <p class="short-desc">Site completo para escritório de advocacia.</p>
+                            <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Flávia Coutinho Advocacia, focando em responsividade, identidade visual profissional e funcionalidade prática para clientes. O site inclui páginas de apresentação, áreas de atuação e um formulário de contato funcional. Fui responsável desde a criação até a compra e gerenciamento de domínio, hospedagem e configuração de e-mail profissional.</p>
+                            <a href="https://flaviacoutinhoadvocacia.com.br" target="_blank" class="project-link">Visitar Site</a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card left-card row-2" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="lodgeCapa.png" alt="Website Lodge" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <i class="fas fa-globe hero-lamp"></i>
+                                <h3>Website Lodge</h3>
+                            </div>
+                            <p class="short-desc">Site responsivo para empresa Lodge Engenharia.</p>
+                            <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Lodge Engenharia, meu primeiro trabalho profissional. O site apresenta a empresa, seus serviços e portfólio de projetos concluídos, garantindo uma navegação intuitiva. Criado com HTML, CSS e JavaScript, possui um design responsivo e moderno, oferecendo uma presença digital mais profissional à empresa.</p>
+                            <a href="https://lodge.com.br" target="_blank" class="project-link">Visitar Site</a>
+                        </div>
+                    </div>
+        
+                    <div class="project-card right-card row-2" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="sudoku.png" alt="Solucionador de Sudoku" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <i class="fas fa-th hero-lamp"></i>
+                                <h3>Solucionador de Sudoku</h3>
+                            </div>
+                            <p class="short-desc">Solucionador automático de Sudoku.</p>
+                            <p class="full-desc" style="display: none;">Desenvolvi um solucionador de Sudoku em Python como desafio pessoal, exigindo raciocínio lógico e programação avançada. O software analisa as regras do jogo e resolve qualquer tabuleiro automaticamente. Para facilitar o uso, criei uma interface gráfica com Tkinter, permitindo que os usuários insiram os números manualmente e obtenham a solução de forma interativa.</p>
+                        </div>
+                    </div>
+        
+                    <div class="project-card left-card row-3" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="carrinho.png" alt="Carrinho Arduino" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <i class="fas fa-robot hero-lamp"></i>
+                                <h3>Carrinho com Garras</h3>
+                            </div>
+                            <p class="short-desc">Carrinho robótico com Bluetooth.</p>
+                            <p class="full-desc" style="display: none;">Construí um carrinho robótico com uma garra acoplada, utilizando um kit da EletroGate como base, mas realizando modificações para otimizar sua eficiência. Integrei um módulo Bluetooth HC-05 para controle via celular com o aplicativo Dabble. O projeto envolveu programação em Arduino, montagem de circuitos e adaptação de componentes como motores, microservo e módulo ponte H L298N.</p>
+                        </div>
+                    </div>
+        
+                    <div class="project-card right-card row-3" data-expanded="false">
+                        <div class="project-overlay"></div>
+                        <img src="whatsapp.webp" alt="Automação WhatsApp" class="project-img">
+                        <div class="project-info">
+                            <div class="project-title">
+                                <i class="fab fa-whatsapp hero-lamp" style="color: #00e510;"></i>
+                                <h3>Automação WhatsApp</h3>
+                            </div>
+                            <p class="short-desc">Automação de tarefas no WhatsApp.</p>
+                            <p class="full-desc" style="display: none;">Utilizando Python, Selenium e Web Scraping, desenvolvi um sistema para automatizar o envio de mensagens no WhatsApp. O usuário pode definir uma lista de contatos, programar mensagens e escolher horários para envio automático. Esse projeto me introduziu à automação da web, conhecimento que apliquei posteriormente em projetos como conversores de moeda, extração de dados do LinkedIn e coleta das mídias mais relevantes para usar no Unwind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competicoes" class="section">
     <div class="container">
-        <h2 id="projects-title">Explore meus Projetos e Criações</h2>
-        <div class="projects-grid">
-            <!-- Primeira Linha: Unwind (left) - Flavia Advocacia (right) -->
-            <div class="project-card left-card row-1" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="unwindPage.png" alt="Aplicativo Unwind" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <img src="trueUnwind.png" alt="Unwind Logo" class="hero-lamp">
-                        <h3 style="font-family: hamster; color: #004aad; font-size: 2rem;">Unwind</h3>
+        <h2 id="competitions-title">Minhas Conquistas em Competições</h2>
+
+        <div class="competitions-panel">
+            
+            <div class="competitions-tabs-container">
+
+                <div class="competition-tab-item" data-competition="abb">
+                    <div class="progress-bar"></div>
+                    <div class="tab-content">
+                        <div class="tab-icon-wrapper"><i class="fas fa-camera"></i></div>
+                        <span class="tab-label">Visão Computacional</span>
                     </div>
-                    <p class="short-desc">Comunidade para filmes, séries e games.</p>
-                    <p class="full-desc" style="display: none;">O Unwind é um aplicativo social para filmes, séries e jogos. Inicialmente desenvolvido em Java com Android Studio, foi refatorado para React Native, tornando-se multiplataforma. O app combina elementos de rede social, como perfis, posts, curtidas e comentários, com organização de mídias e um sistema avançado de recomendações baseado no consumo do usuário. Para coletar as informações das mídias, utilizei Web Scraping em Python para listar as mais relevantes e, em seguida, integrei as APIs do TMDB e IGDB para obter detalhes completos. Após essa etapa, todos os dados foram armazenados no Firebase, que serve como banco de dados principal do app. Além do aplicativo, desenvolvi uma landing page e toda a identidade visual no GIMP.</p>
-                    <a href="https://unwind.com.br" target="_blank" class="project-link">Visitar Site</a>
+                </div>
+                
+                <div class="competition-tab-item" data-competition="w1">
+                    <div class="progress-bar"></div>
+                    <div class="tab-content">
+                        <div class="tab-icon-wrapper"><i class="fas fa-sitemap"></i></div>
+                        <span class="tab-label">Plataforma de Holding</span>
+                    </div>
+                </div>
+                <div class="competition-tab-item active" data-competition="vestibular">
+                    <div class="progress-bar"></div>
+                    <div class="tab-content">
+                        <div class="tab-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="tab-label">Bolsa por Mérito</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card right-card row-1" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="flaviaSite.png" alt="Website Flavia Advocacia" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <i class="fas fa-scale-balanced hero-lamp"></i>
-                        <h3>Flávia Advocacia</h3>
-                    </div>
-                    <p class="short-desc">Site completo para escritório de advocacia.</p>
-                    <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Flávia Coutinho Advocacia, focando em responsividade, identidade visual profissional e funcionalidade prática para clientes. O site inclui páginas de apresentação, áreas de atuação e um formulário de contato funcional. Fui responsável desde a criação até a compra e gerenciamento de domínio, hospedagem e configuração de e-mail profissional.</p>
-                    <a href="https://flaviacoutinhoadvocacia.com.br" target="_blank" class="project-link">Visitar Site</a>
-                </div>
-            </div>
+            <div class="competition-content-wrapper">
 
-            <!-- Segunda Linha: Website Lodge (left) - Sudoku (right) -->
-            <div class="project-card left-card row-2" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="website.png" alt="Website Lodge" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <i class="fas fa-globe hero-lamp"></i>
-                        <h3>Website Lodge</h3>
+                <div class="competition-content" id="competition-content-abb">
+                    <div class="competition-card">
+                        <div class="competition-info">
+                            <div style="flex-direction: row;display: flex; gap: 2vw; align-items: center;">
+                                <img src="abb.png" alt="Logo ABB" class="company-logo">
+                            <h3 class="competition-result winner">🏆 Vencedor</h3>
+                            </div>
+                            
+                            <h4 class="competition-project-title">Plataforma de Segurança e Monitoramento de EPIs</h4>
+                            <p class="competition-description">
+                                Criei o conceito e o protótipo de uma plataforma inovadora para aumentar a segurança do trabalho através da gamificação e monitoramento inteligente do uso de EPIs. A solução utiliza visão computacional, gestão de equipes e rastreamento em tempo real para prevenir acidentes.
+                            </p>
+                            <div class="tech-stack">
+                                <strong>Minha Contribuição:</strong>
+                                <span>Idealização</span>
+                                <span>UX/UI Design</span>
+                                <span>Prototipagem</span>
+                                <span>Business Plan</span>
+                            </div>
+                            <a href="painelABB.html" class="cta-button competition-cta" target="_blank">Acessar Protótipo</a>
+                        </div>
+                        <div class="competition-visual">
+                            <img src="Construction worker-rafiki.png" alt="Visual do Projeto ABB" class="competition-image">
+                        </div>
                     </div>
-                    <p class="short-desc">Site responsivo para empresa Lodge Engenharia.</p>
-                    <p class="full-desc" style="display: none;">Desenvolvi o site institucional da Lodge Engenharia, meu primeiro trabalho profissional. O site apresenta a empresa, seus serviços e portfólio de projetos concluídos, garantindo uma navegação intuitiva. Criado com HTML, CSS e JavaScript, possui um design responsivo e moderno, oferecendo uma presença digital mais profissional à empresa.</p>
-                    <a href="https://lodge.com.br" target="_blank" class="project-link">Visitar Site</a>
                 </div>
-            </div>
-
-            <div class="project-card right-card row-2" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="sudoku.png" alt="Solucionador de Sudoku" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <i class="fas fa-th hero-lamp"></i>
-                        <h3>Solucionador de Sudoku</h3>
+                
+                <div class="competition-content" id="competition-content-w1">
+                    <div class="competition-card">
+                        <div class="competition-info">
+                            
+                            <div style="flex-direction: row;display: flex; gap: 2vw; align-items: center;"><img src="w1.png" alt="Logo W1" class="company-logo"><h3 class="competition-result finalist">🏅 Finalista</h3></div>
+                            
+                            <h4 class="competition-project-title">Plataforma de Gestão de Holdings</h4>
+                            <p class="competition-description">
+                                Desenvolvi uma plataforma web completa e funcional para automatizar e simplificar o processo de criação de holdings para clientes. Fui responsável pela área do cliente, desde o login até o painel de controle com chat e assistente de IA.
+                            </p>
+                            <div class="tech-stack">
+                                <strong>Tecnologias:</strong>
+                                <span>Django</span>
+                                <span>Docker</span>
+                                <span>JavaScript</span>
+                                <span>ChatGPT API</span>
+                            </div>
+                            <a href="#" id="verVideoW1Btn" class="cta-button competition-cta">Ver Vídeo do Projeto</a>
+                        </div>
+                        <div class="competition-visual">
+                            <img src="Holding the arrow-rafiki.png" alt="Visual do Projeto W1" class="competition-image">
+                        </div>
                     </div>
-                    <p class="short-desc">Solucionador automático de Sudoku.</p>
-                    <p class="full-desc" style="display: none;">Desenvolvi um solucionador de Sudoku em Python como desafio pessoal, exigindo raciocínio lógico e programação avançada. O software analisa as regras do jogo e resolve qualquer tabuleiro automaticamente. Para facilitar o uso, criei uma interface gráfica com Tkinter, permitindo que os usuários insiram os números manualmente e obtenham a solução de forma interativa.</p>
                 </div>
-            </div>
-
-            <!-- Terceira Linha: Carrinho Arduino (left) - WhatsApp (right) -->
-            <div class="project-card left-card row-3" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="carrinho.png" alt="Carrinho Arduino" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <i class="fas fa-robot hero-lamp"></i>
-                        <h3>Carrinho com Garras</h3>
+                <div class="competition-content visible" id="competition-content-vestibular">
+                    <div class="competition-card">
+                        <div class="competition-info">
+                            <div style="flex-direction: row;display: flex; gap: 2vw; align-items: center;"><img src="logo-IMT.png" alt="Logo Mauá" class="company-logo"> <h3 class="competition-result winner">🌟 Bolsa por Desempenho</h3>
+                            </div>
+                            <h4 class="competition-project-title">Aprovação com Bolsa de Estudos</h4>
+                            <p class="competition-description">
+                                Conquistei uma bolsa de estudos no Instituto Mauá de Tecnologia por mérito, resultado de um excelente desempenho no processo seletivo para Engenharia de Computação, com destaque em exatas e ciências.
+                            </p>
+                            <div class="tech-stack">
+                                <strong>Destaques:</strong>
+                                <span>Nota Elevada em Ciências</span>
+                                <span>Ótimo Desempenho em Exatas</span>
+                                <span>Conquista de Bolsa por Mérito</span>
+                            </div>
+                        </div>
+                        <div class="competition-visual">
+                            <img src="Studying-rafiki.png" alt="Campus do Instituto Mauá de Tecnologia" class="competition-image">
+                        </div>
                     </div>
-                    <p class="short-desc">Carrinho robótico com Bluetooth.</p>
-                    <p class="full-desc" style="display: none;">Construí um carrinho robótico com uma garra acoplada, utilizando um kit da EletroGate como base, mas realizando modificações para otimizar sua eficiência. Integrei um módulo Bluetooth HC-05 para controle via celular com o aplicativo Dabble. O projeto envolveu programação em Arduino, montagem de circuitos e adaptação de componentes como motores, microservo e módulo ponte H L298N.</p>
-                </div>
-            </div>
-
-            <div class="project-card right-card row-3" data-expanded="false">
-                <div class="project-overlay"></div>
-                <img src="whatsapp.webp" alt="Automação WhatsApp" class="project-img">
-                <div class="project-info">
-                    <div class="project-title">
-                        <i class="fab fa-whatsapp hero-lamp" style="color: #00e510;"></i>
-                        <h3>Automação WhatsApp</h3>
-                    </div>
-                    <p class="short-desc">Automação de tarefas no WhatsApp.</p>
-                    <p class="full-desc" style="display: none;">Utilizando Python, Selenium e Web Scraping, desenvolvi um sistema para automatizar o envio de mensagens no WhatsApp. O usuário pode definir uma lista de contatos, programar mensagens e escolher horários para envio automático. Esse projeto me introduziu à automação da web, conhecimento que apliquei posteriormente em projetos como conversores de moeda, extração de dados do LinkedIn e coleta das mídias mais relevantes para usar no Unwind.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
         <section id="ensino" class="section">
     <div class="container">
         <h2 id="education-title">Minha Formação Acadêmica e Cursos</h2>
         <div class="education-wrapper">
-            <!-- Parte Superior: Curso Maior e Contêiner de Coluna -->
             <div class="education-top">
-                <!-- Curso Maior (esquerda) -->
                 <div class="education-section main-course-section">
                     <div class="education-item main-course-item">
                         <div class="education-header">
                             <h4>Bacharelado em Engenharia da Computação</h4>
-                            <span class="education-date">2023 2027</span>
+                            <span class="education-date">2023 – 2027</span>
                         </div>
                         <div class="education-image-slot">
-                            <img src="maua-campus.jpg" alt="">
+                            <img src="maua-campus.jpg" alt="Campus do Instituto Mauá de Tecnologia">
                         </div>
-                        <p class="education-institution">Instituto Máua de Tecnologia</p>
+                        <div class="education-institution-logo">
+                            <img src="logo-IMT.png" alt="Logo Instituto Mauá de Tecnologia" class="logo-img">
+                            <p class="education-institution-name">Instituto Mauá de Tecnologia</p>
+                        </div>
                         <p class="education-description">
                             Aqui aprofundei meus conhecimentos em programação (Python, Java, C), estrutura de dados e arquitetura de computadores, além de circuitos eletrônicos e matemática computacional para modelagem e análise de dados. Também estudei Cálculo e Álgebra Linear, essenciais para a resolução de problemas computacionais.
                         </p>
                     </div>
                 </div>
-                <!-- Contêiner de Coluna com Dois Cursos (direita) -->
                 <div class="education-column">
-                    <!-- Curso 2 (agora Cisco) -->
                     <div class="education-item column-course-item">
                         <div class="education-header">
                             <h4>Fundamentos de Redes</h4>
@@ -178,17 +292,19 @@
                         </div>
                         <div class="education-content">
                             <div class="education-image-square">
-                                <img src="cisco.png" alt="">
+                                <img src="network.webp" alt="Ilustração de Redes">
                             </div>
                             <div class="education-text">
-                                <p class="education-institution">Cisco Networking Academy - 70 horas</p>
+                                <div class="education-institution-logo">
+                                    <img src="cisco-2.svg" alt="Logo Cisco" class="logo-img">
+                                    <p class="education-institution-name">Cisco Networking Academy - 70 horas</p>
+                                </div>
                                 <p class="education-description">
                                     No curso, aprendi os princípios das redes, explorando dispositivos, mídias e protocolos de comunicação. Desenvolvi também habilidades para identificar e resolver problemas básicos, com foco na certificação Cisco CCST.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <!-- Curso 3 (agora Google Cloud) -->
                     <div class="education-item column-course-item">
                         <div class="education-header">
                             <h4>Google Cloud Computing Foundations</h4>
@@ -196,10 +312,13 @@
                         </div>
                         <div class="education-content">
                             <div class="education-image-square">
-                                <img src="googleCloudImg.webp" alt="">
+                                <img src="googleCloudImg.webp" alt="Logo Google Cloud">
                             </div>
                             <div class="education-text">
-                                <p class="education-institution">Google - 40 horas</p>
+                                <div class="education-institution-logo">
+                                    <img src="google-cloud-3.svg" alt="Logo Google" class="logo-img">
+                                    <p class="education-institution-name">Google Cloud - 40 horas</p>
+                                </div>
                                 <p class="education-description">
                                     Nesse curso, aprendi os fundamentos da computação em nuvem, incluindo infraestrutura, armazenamento, redes e segurança no Google Cloud. Explorei bancos de dados gerenciados, machine learning na nuvem e escalabilidade de aplicações, entendendo como integrar e otimizar serviços na plataforma.
                                 </p>
@@ -208,81 +327,86 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Parte Inferior: Três Cursos em Linha -->
             <div class="education-bottom">
                 <div class="courses-row">
-                    <!-- Curso 4 (agora AWS) -->
                     <div class="education-item">
                         <div class="education-header">
                             <h4>AWS Academy Cloud Foundations</h4>
                             <span class="education-date">2024</span>
                         </div>
                         <div class="education-image-slot">
-                            <img src="aws.webp" alt="">
+                            <img src="aws.webp" alt="Logo AWS">
                         </div>
-                        <p class="education-institution">AWS - 20 horas</p>
+                         <div class="education-institution-logo">
+                            <img src="aws-2.svg" alt="Logo AWS" class="logo-img">
+                            <p class="education-institution-name">AWS - 20 horas</p>
+                        </div>
                         <p class="education-description">
                             No curso, aprendi os conceitos essenciais da computação em nuvem, incluindo arquitetura AWS, armazenamento, redes, segurança e escalabilidade de aplicações. Explorei serviços como EC2, S3, RDS e Lambda, entendendo como projetar soluções eficientes e seguras na nuvem.
                         </p>
                     </div>
-                    <!-- Curso 5 -->
                     <div class="education-item">
                         <div class="education-header">
                             <h4>Automação e Controle com Arduino</h4>
                             <span class="education-date">2023</span>
                         </div>
                         <div class="education-image-slot">
-                            <img src="arduinoImg.webp" alt="">
+                            <img src="eletronica.jpg" alt="Placa Arduino">
                         </div>
-                        <p class="education-institution">IMT - 40 horas</p>
+                         <div class="education-institution-logo">
+                             <img src="logo-IMT.png" alt="Logo Instituto Mauá de Tecnologia" class="logo-img">
+                            <p class="education-institution-name">IMT - 40 horas</p>
+                        </div>
                         <p class="education-description">
                             No curso, aprendi a programar e integrar componentes com Arduino, trabalhando com sensores, motores, displays e Bluetooth para desenvolver circuitos interativos. Também aprimorei habilidades em C para microcontroladores, explorando automação e controle de dispositivos.
                         </p>
                     </div>
-                    <!-- Curso 6 -->
                     <div class="education-item">
-                        <div class="education-header">
-                            <h4>Responsive Web Design</h4>
-                            <span class="education-date">2023</span>
-                        </div>
-                        <div class="education-image-slot">
-                            <img src="webDevelopment.jpg" alt="">
-                        </div>
-                        <p class="education-institution">FreeCodeCamp - 30 horas</p>
-                        <p class="education-description">
-                            Nesse curso, aprendi a criar interfaces web modernas e adaptáveis utilizando HTML e CSS. Desenvolvi layouts responsivos, explorei flexbox e grid, e aprimorei a acessibilidade e usabilidade de páginas para diferentes dispositivos.
-                        </p>
-                    </div>
+    <div class="education-header">
+        <h4>Getting Started with Deep Learning</h4>
+        <span class="education-date">2025</span>
+    </div>
+    <div class="education-image-slot">
+        <img src="deepLearning.webp" alt="Ilustração de Deep Learning">
+    </div>
+    <div class="education-institution-logo">
+        <img src="nvidia-wordmark-1.svg" alt="Logo Nvidia" class="logo-img">
+        <p class="education-institution-name">NVIDIA - 8 horas</p>
+    </div>
+    <p class="education-description">
+        Construí um classificador de imagens em PyTorch com mais de 92% de acurácia, aplicando técnicas de Deep Learning como Transfer Learning, Data Augmentation e Fine-Tuning. O curso também introduziu os fundamentos de Modelos de Linguagem Grandes (LLMs).
+    </p>
+</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
         
-        <div class="expanded-project" style="display: none;">
-            <div class="expanded-content">
-                <img src="" alt="Project Image" class="expanded-img">
+       <div class="overlay-background" style="display: none;"></div>
+    <div class="expanded-project" style="display: none;">
+        <div class="expanded-content">
+            <img src="" alt="Imagem do Projeto" class="expanded-img">
+            <div class="expanded-info">
                 <div class="project-header">
-                    <div class="project-title">
-                        <span class="hero-lamp"></span>
-                    <h3 class="expanded-title"></h3>
+                    <div class="expanded-title-container">
+                        <div class="hero-lamp">
+                            </div>
+                        <h3 class="expanded-title"></h3>
                     </div>
-                    
-                    <a href="" target="_blank" class="project-link" style="display: none;">Visitar Site</a>
+                    <a href="#" target="_blank" class="project-link cta-button">Visitar Site</a>
                 </div>
                 <p class="full-desc"></p>
-                
             </div>
         </div>
+    </div>
+
         <section id="habilidades" class="section">
             <div class="container">
                 <h2 id="skills-title">As Ferramentas que Impulsionam minhas Criações</h2>
                 <div class="skills-wrapper">
                     <div class="skills-carousel top-carousel">
                         <div class="skills-track">
-                            <!-- Primeira linha (movendo para a direita) -->
                             <div class="skill-item"><img src="python.png" alt="Python" class="skill-icon"><span>Python</span></div>
                             <div class="skill-item"><img src="java.png" alt="Java" class="skill-icon"><span>Java</span></div>
                             <div class="skill-item"><img src="js.png" alt="JavaScript" class="skill-icon"><span>JavaScript</span></div>
@@ -292,7 +416,7 @@
                             <div class="skill-item"><img src="word.png" alt="Word" class="skill-icon"><span>Word</span></div>
                             <div class="skill-item"><img src="selenium.png" alt="Web Scrapping" class="skill-icon"><span>Web Scrapping</span></div>
                             <div class="skill-item"><img src="googleCloud.png" alt="Google Cloud" class="skill-icon"><span>Google Cloud</span></div>
-                            <!-- Itens duplicados -->
+                            <div class="skill-item"><img src="docker.png" alt="Docker" class="skill-icon"><span>Docker</span></div>
                             <div class="skill-item"><img src="python.png" alt="Python" class="skill-icon"><span>Python</span></div>
                             <div class="skill-item"><img src="java.png" alt="Java" class="skill-icon"><span>Java</span></div>
                             <div class="skill-item"><img src="js.png" alt="JavaScript" class="skill-icon"><span>JavaScript</span></div>
@@ -302,11 +426,11 @@
                             <div class="skill-item"><img src="word.png" alt="Word" class="skill-icon"><span>Word</span></div>
                             <div class="skill-item"><img src="selenium.png" alt="Web Scrapping" class="skill-icon"><span>Web Scrapping</span></div>
                             <div class="skill-item"><img src="googleCloud.png" alt="Google Cloud" class="skill-icon"><span>Google Cloud</span></div>
+                            <div class="skill-item"><img src="docker.png" alt="Docker" class="skill-icon"><span>Docker</span></div>
                         </div>
                     </div>
                     <div class="skills-carousel bottom-carousel">
                         <div class="skills-track">
-                            <!-- Segunda linha (movendo para a esquerda) -->
                             <div class="skill-item"><img src="powerPoint.png" alt="PowerPoint" class="skill-icon"><span>PowerPoint</span></div>
                             <div class="skill-item"><img src="c.png" alt="C" class="skill-icon"><span>C</span></div>
                             <div class="skill-item"><img src="arduino.png" alt="Arduino" class="skill-icon"><span>Arduino</span></div>
@@ -316,7 +440,6 @@
                             <div class="skill-item"><img src="gimp.png" alt="GIMP" class="skill-icon"><span>GIMP</span></div>
                             <div class="skill-item"><img src="aws.png" alt="AWS" class="skill-icon"><span>AWS</span></div>
                             <div class="skill-item"><img src="linux.png" alt="Linux" class="skill-icon"><span>Linux</span></div>
-                            <!-- Itens duplicados -->
                             <div class="skill-item"><img src="powerPoint.png" alt="PowerPoint" class="skill-icon"><span>PowerPoint</span></div>
                             <div class="skill-item"><img src="c.png" alt="C" class="skill-icon"><span>C</span></div>
                             <div class="skill-item"><img src="arduino.png" alt="Arduino" class="skill-icon"><span>Arduino</span></div>
@@ -353,11 +476,19 @@
             </div>
         </section>
     </main>
-
     <footer>
         <p class="copyright">© 2025 Diogo Musso Coutinho</p>
         <p class="production">Uma produção de  <a href="https://dids1901.github.io" target="_blank" style="color: #f0f0f0;">Diogo Coutinho</a></p>
     </footer>
+    <div id="videoModal" class="video-modal-overlay">
+    <div class="video-modal-content">
+        <span class="close-video-modal">&times;</span>
+        <video id="w1VideoPlayer" controls>
+            <source src="w1PainelVideo_1.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+</div>
     <script src="scripts.js"></script>
 </body>
 </html>
