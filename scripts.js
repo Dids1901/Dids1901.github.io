@@ -418,3 +418,167 @@ function initCompetitionsSection() {
         }
     });
 });
+(function setupDiogoBot() {
+  const BTN = document.getElementById('diogo-chatbot-button');
+  const WINDOW = document.getElementById('diogo-chatbot-window');
+  const CLOSE = document.getElementById('diogo-chatbot-close');
+  const MSGS = document.getElementById('diogo-chat-messages');
+  const FORM = document.getElementById('diogo-chat-form');
+  const INPUT = document.getElementById('diogo-chat-input');
+
+  if (!BTN || !WINDOW) return; // se não carregou, sai
+
+  const MEMORY_KEY = 'diogoBotMemory_v1';
+
+  // base que você quer que ele saiba SEMPRE
+  const baseMemory = {
+    nome: "Diogo Musso Coutinho",
+    curso: "Engenharia da Computação",
+    faculdade: "Instituto Mauá de Tecnologia (IMT)",
+    escola: "Instituto Mauá de Tecnologia",
+    cidade: "São Paulo",
+    objetivo: "Criar projetos de tecnologia com impacto real",
+    portfolio: "https://dids1901.github.io"
+  };
+
+  // carrega do localStorage e junta
+  const saved = JSON.parse(localStorage.getItem(MEMORY_KEY) || "{}");
+  const memory = { ...baseMemory, ...saved };
+
+  function persist() {
+    localStorage.setItem(MEMORY_KEY, JSON.stringify(memory));
+  }
+
+  function normalize(txt) {
+    return txt
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, ""); // tira acento
+  }
+
+  function addMessage(content, from = 'bot') {
+    const div = document.createElement('div');
+    div.className = `chat-message ${from}`;
+    div.textContent = content;
+    MSGS.appendChild(div);
+    MSGS.scrollTop = MSGS.scrollHeight;
+  }
+
+  // --- motorzinho de QA ---
+  function getAnswer(userText) {
+    const clean = normalize(userText.trim());
+
+    // 1) modo ensinar: "salvar: chave = valor"
+    if (clean.startsWith("salvar:")) {
+      // exemplo: salvar: escola = SESI 099
+      const rest = userText.split(":")[1]; // pega depois de salvar:
+      if (rest && rest.includes("=")) {
+        const [kRaw, vRaw] = rest.split("=");
+        const key = normalize(kRaw).replace(/[^a-z0-9]/g, "").trim(); // "escola"
+        const value = vRaw.trim();
+        if (key && value) {
+          memory[key] = value;
+          persist();
+          return `Anotado ✅\n${key} = ${value}`;
+        }
+      }
+      return "Formato pra ensinar: salvar: chave = valor";
+    }
+
+    // 2) perguntas comuns
+    if (clean.includes("onde") && (clean.includes("estuda") || clean.includes("estudou") || clean.includes("faculdade") || clean.includes("universidade"))) {
+      return `O Diogo estuda na ${memory.faculdade || memory.escola || "faculdade que você ainda não me contou 😅"}.`;
+    }
+
+    if (clean.includes("qual o nome") || clean.includes("seu nome") || clean.includes("nome do diogo")) {
+      return `O nome completo dele é ${memory.nome}.`;
+    }
+
+    if (clean.includes("curso") || clean.includes("o que ele faz") || clean.includes("o que o diogo faz")) {
+      return `Ele faz ${memory.curso || "Engenharia da Computação"}.`;
+    }
+
+    if (clean.includes("onde mora") || clean.includes("cidade")) {
+      return `Ele está em ${memory.cidade || "uma cidade que você não salvou ainda 😅"}.`;
+    }
+
+    if (clean.includes("objetivo") || clean.includes("proposito") || clean.includes("meta")) {
+      return memory.objetivo || "Construir projetos de tecnologia com impacto.";
+    }
+
+    if (clean.includes("portfolio") || clean.includes("site")) {
+      return `O portfólio dele é ${memory.portfolio || "este site que você está vendo 😎"}.`;
+    }
+
+    // 3) tentativa de pegar pela chave
+    // ex: "qual escola o diogo estudou?"
+    const keys = Object.keys(memory);
+    for (const key of keys) {
+      if (clean.includes(key)) {
+        return `Sobre ${key}: ${memory[key]}`;
+      }
+    }
+
+    // 4) fallback totalmente estático
+    return "Não achei essa info ainda 🤔. Me ensina assim: `salvar: escola = Colégio X`.";
+  }
+
+  // --- opcional: GANCHO PRA API DE IA (descomentando vc prova que sabe) ---
+  async function tryLLM(history) {
+    // descomenta e põe sua chave pra testar (NÃO subir chave pública no GitHub!)
+    /*
+    const apiKey = localStorage.getItem('OPENAI_KEY');
+    if (!apiKey) return null;
+    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: history,
+        temperature: 0.3
+      })
+    });
+    const data = await resp.json();
+    return data.choices?.[0]?.message?.content || null;
+    */
+    return null;
+  }
+
+  BTN.addEventListener('click', () => {
+    WINDOW.classList.toggle('chat-hidden');
+    if (!WINDOW.classList.contains('chat-hidden')) {
+      INPUT.focus();
+    }
+  });
+
+  CLOSE.addEventListener('click', () => {
+    WINDOW.classList.add('chat-hidden');
+  });
+
+  FORM.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = INPUT.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    INPUT.value = "";
+
+    // primeiro tenta resposta local
+    let answer = getAnswer(text);
+
+    // depois, se quiser, tenta LLM (se tiver chave, ele sobrescreve)
+    try {
+      const llm = await tryLLM([
+        { role: "system", content: "Você é um bot que responde sobre o Diogo baseado na memória passada." },
+        { role: "user", content: text }
+      ]);
+      if (llm) answer = llm;
+    } catch (err) {
+      // se der erro na API, ignora e usa local
+    }
+
+    addMessage(answer, 'bot');
+  });
+})();
