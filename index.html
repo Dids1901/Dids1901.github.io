@@ -489,24 +489,36 @@
         </video>
     </div>
 </div>
-<div id="diogo-chatbot-window" class="chat-hidden">
-  <div class="chat-header">
-    <div class="chat-title">DiogoBot</div>
-    <button id="diogo-chatbot-close" aria-label="Fechar chat">&times;</button>
-  </div>
+<!-- DIOGO BOT -->
+<div id="diogo-chatbot">
+  <button id="diogo-chatbot-button" aria-label="Abrir chat">
+    💬
+  </button>
 
-  <!-- 👇 AQUI é o contêiner que o JS espera -->
-  <div id="diogo-chat-messages" class="chat-messages">
-    <div class="chat-message bot">
-      Oi! 👋 Pergunta qualquer coisa sobre o Diogo!
+  <div id="diogo-chatbot-window" class="chat-hidden">
+    <div class="chat-header">
+      <div>
+        <div class="chat-title">DiogoBot</div>
+        <!-- se quiser subtítulo:
+        <div class="chat-subtitle">Pergunte sobre o portfólio 👇</div>
+        -->
+      </div>
+      <button id="diogo-chatbot-close" aria-label="Fechar chat">&times;</button>
     </div>
-  </div>
 
-  <form id="diogo-chat-form" class="chat-input-area">
-    <input id="diogo-chat-input" type="text" placeholder="Digite e aperte Enter..." autocomplete="off" />
-    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-  </form>
+    <div id="diogo-chat-messages" class="chat-messages">
+      <div class="chat-message bot">
+        Oi! 👋 Pergunta qualquer coisa sobre o Diogo!
+      </div>
+    </div>
+
+    <form id="diogo-chat-form" class="chat-input-area">
+      <input id="diogo-chat-input" type="text" placeholder="Digite e aperte Enter..." autocomplete="off" />
+      <button type="submit"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
 </div>
+
 
 
     <script src="scripts.js"></script>
