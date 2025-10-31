@@ -419,19 +419,21 @@ function initCompetitionsSection() {
     });
 });
 // ===============================
-//  DIOGO BOT com OpenAI (Vercel)
+//  DIOGO BOT
 // ===============================
 (function setupDiogoBot() {
-  const BTN    = document.getElementById('diogo-chatbot-button');
-  const WINDOW = document.getElementById('diogo-chatbot-window');
-  const CLOSE  = document.getElementById('diogo-chatbot-close');
-  const MSGS   = document.getElementById('diogo-chat-messages');
-  const FORM   = document.getElementById('diogo-chat-form');
-  const INPUT  = document.getElementById('diogo-chat-input');
+  const WRAPPER = document.getElementById('diogo-chatbot');
+  const BTN     = document.getElementById('diogo-chatbot-button');
+  const WINDOW  = document.getElementById('diogo-chatbot-window');
+  const CLOSE   = document.getElementById('diogo-chatbot-close');
+  const MSGS    = document.getElementById('diogo-chat-messages');
+  const FORM    = document.getElementById('diogo-chat-form');
+  const INPUT   = document.getElementById('diogo-chat-input');
 
-  if (!BTN || !WINDOW || !FORM) return;
+  // se não tiver a janela, não faz nada
+  if (!WINDOW || !FORM || !MSGS) return;
 
-  // histórico que vamos mandar pra API
+  // histórico base
   const history = [
     {
       role: "system",
@@ -448,22 +450,9 @@ function initCompetitionsSection() {
     return div;
   }
 
-  BTN.addEventListener("click", () => {
-    WINDOW.classList.toggle("chat-hidden");
-    if (!WINDOW.classList.contains("chat-hidden")) {
-      INPUT.focus();
-    }
-  });
-
-  CLOSE.addEventListener("click", () => {
-    WINDOW.classList.add("chat-hidden");
-  });
-
   async function sendToAI(userText) {
-    // mostra "digitando..."
     const loading = addMessage("Digitando…", "bot");
 
-    // monta payload
     const messages = [...history, { role: "user", content: userText }];
 
     try {
@@ -476,13 +465,9 @@ function initCompetitionsSection() {
       const data = await res.json();
       const reply = data.reply || "Não consegui responder agora 😅";
 
-      // tira o loading
       loading.remove();
-
-      // mostra resposta
       addMessage(reply, "bot");
 
-      // salva no histórico
       history.push({ role: "user", content: userText });
       history.push({ role: "assistant", content: reply });
     } catch (err) {
@@ -492,14 +477,34 @@ function initCompetitionsSection() {
     }
   }
 
+  // abrir
+  if (BTN) {
+    BTN.addEventListener("click", () => {
+      WINDOW.classList.toggle("chat-hidden");
+      if (!WINDOW.classList.contains("chat-hidden")) {
+        INPUT && INPUT.focus();
+      }
+    });
+  } else {
+    // se alguém esquecer de pôr o botão, mostra direto
+    WINDOW.classList.remove("chat-hidden");
+  }
+
+  // fechar
+  if (CLOSE) {
+    CLOSE.addEventListener("click", () => {
+      WINDOW.classList.add("chat-hidden");
+    });
+  }
+
+  // enviar
   FORM.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = (INPUT.value || "").trim();
     if (!text) return;
-
-    // mostra o que o usuário escreveu
     addMessage(text, "user");
     INPUT.value = "";
     sendToAI(text);
   });
 })();
+
