@@ -1,3 +1,4 @@
+// api/chat.js
 import OpenAI from "openai";
 
 const client = new OpenAI({
@@ -18,6 +19,7 @@ Se não tiver a informação, diga: "isso não está no portfólio."
 `;
 
 const hits = new Map();
+
 function tooMany(req) {
   const ip =
     req.headers["x-forwarded-for"]?.split(",")[0] ||
@@ -39,7 +41,9 @@ export default async function handler(req, res) {
   }
 
   if (tooMany(req)) {
-    return res.status(429).json({ error: "Muitas requisições, tente em 1 minuto." });
+    return res
+      .status(429)
+      .json({ error: "Muitas requisições, tente em 1 minuto." });
   }
 
   const { messages } = req.body || {};
@@ -50,10 +54,7 @@ export default async function handler(req, res) {
   try {
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: DIOGO_PROFILE },
-        ...messages,
-      ],
+      messages: [{ role: "system", content: DIOGO_PROFILE }, ...messages],
       max_tokens: 250,
       temperature: 0.4,
     });
