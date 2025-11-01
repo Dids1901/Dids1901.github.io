@@ -71,13 +71,13 @@ export default async function handler(req, res) {
   try {
     const completion = await client.chat.completions.create({
       // pode usar gpt-4o-mini ou gpt-5-nano; os dois aceitam max_completion_tokens
-      model: "gpt-4o-mini",
+      model: "gpt-5-nano",
       messages: [
         { role: "system", content: DIOGO_PROFILE },
         ...messages,
       ],
       max_completion_tokens: 200, // <— era max_tokens, agora é isso
-      temperature: 0.4,
+     
     });
 
     const reply =
