@@ -2,11 +2,11 @@
 import OpenAI from "openai";
 
 const client = new OpenAI({
+  // se o ambiente já injeta OPENAI_API_KEY, pode até omitir o objeto
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// ⚠️ Lembra: esse repo está público. Tudo que estiver aqui TODO MUNDO vê.
-// Se não quiser expor nome da mãe/pai, joga isso pra um KV/banco privado.
+// ⚠️ repo público → não coloque info sensível aqui
 const DIOGO_PROFILE = `
 Você é o DiogoBot, assistente do portfólio do Diogo Musso Coutinho.
 Responda SEMPRE em português do Brasil, curto e direto, tom simpático.
@@ -70,14 +70,16 @@ export default async function handler(req, res) {
 
   try {
     const completion = await client.chat.completions.create({
-      // pode usar gpt-4o-mini ou gpt-5-nano; os dois aceitam max_completion_tokens
+      // aqui você troca o modelo quando quiser
       model: "gpt-5-nano",
       messages: [
         { role: "system", content: DIOGO_PROFILE },
         ...messages,
       ],
-      max_completion_tokens: 200, // <— era max_tokens, agora é isso
-     
+      // a doc nova mostra `max_completion_tokens` / `max_tokens`;
+      // vou usar o nome mais compatível com o que você viu em Python
+      max_tokens: 200,
+      temperature: 0.7,
     });
 
     const reply =
@@ -88,7 +90,7 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error("chat error:", err);
 
-    // se for falta de crédito / quota
+    // quota / crédito
     if (
       err.status === 429 ||
       err.code === "insufficient_quota" ||
