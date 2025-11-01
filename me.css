@@ -1939,185 +1939,179 @@ footer {
         padding: 1.5vh 3vw;
     }
 }
-/* ====== CHATBOT FIXO ====== */
+/* ====== CHATBOT FIXO (versão alinhada ao resto do site) ====== */
 #diogo-chatbot {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 2.5vh;
+  right: 2.5vw;
   z-index: 9999;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "opensans", sans-serif; /* igual h2, botões, etc */
 }
 
+/* === botão padrão redondo (pode trocar a classe depois) === */
 #diogo-chatbot-button {
-  width: 100px;
-  height: 100px;
+  width: 10vw;
+  height: 10vw;
+  
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #004aad, #001e3c);
+  background: linear-gradient(140deg, #0a66c2 0%, #1c1f2a 100%);
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 1.4vh 3vh rgba(0,0,0,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.8rem;
-  transition: transform .2s ease;
+  font-size: 4vw;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-
 #diogo-chatbot-button:hover {
-  transform: scale(1.06);
+  transform: translateY(-0.3vh);
+  box-shadow: 0 1.6vh 3.4vh rgba(0,0,0,0.4);
 }
 
+/* janela */
 #diogo-chatbot-window {
   position: absolute;
-  bottom: 100px;
+  bottom: calc(10vw + 1.5vh); /* sobe o tamanho do botão */
   right: 0;
-  width: min(330px, 85vw);
-  background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+  width: 30vw;
+  
+  background: #1c1f2a;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 1vw;
+  box-shadow: 0 1.4vh 3.5vh rgba(0,0,0,0.45);
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.7vw;
   overflow: hidden;
-  transform-origin: bottom left;
-  transition: opacity .2s ease, transform .2s ease;
+  transform-origin: bottom right;
+  transition: opacity .15s ease, transform .15s ease;
 }
 
 #diogo-chatbot-window.chat-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: scale(.85);
+  transform: scale(.9);
 }
-
 #diogo-chatbot-window:not(.chat-hidden) {
   opacity: 1;
   transform: scale(1);
 }
 
+/* header da janela */
 #diogo-chatbot-window .chat-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(15,23,42,0.85);
-  padding: .7rem .85rem;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: rgba(20,24,28,0.9);
+  padding: 0.8vw 0.9vw;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
 }
-
 .chat-title {
   font-weight: 600;
   color: #fff;
-  font-size: .9rem;
+  font-size: 2vw;
+  line-height: 1.1;
 }
 .chat-subtitle {
-  font-size: .68rem;
-  color: rgba(236,252,203,.85);
+  font-size: 1.4vw;
+  color: rgba(236,252,203,.8);
 }
 
 #diogo-chatbot-close {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 2.6vw;
   cursor: pointer;
+  line-height: 1;
 }
 
+/* mensagens */
 .chat-messages {
-  max-height: 310px;
+  max-height: 28vh;
   overflow-y: auto;
-  padding: .75rem;
+  padding: 0.75vw;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5vw;
 }
-
 .chat-message {
   max-width: 90%;
-  padding: .4rem .65rem .55rem;
-  border-radius: .65rem;
-  font-size: .72rem;
-  line-height: 1.32;
+  padding: 0.5vw 0.7vw 0.55vw;
+  border-radius: 0.7vw;
+  font-size: 1vw;
+  line-height: 1.35;
   white-space: pre-line;
+  font-family: "carving", sans-serif;
 }
-
 .chat-message.bot {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(148,163,184,0.12);
   color: #fff;
-  border: 1px solid rgba(148,163,184,0.15);
 }
-
 .chat-message.user {
-  background: #004aad;
+  background: #0a66c2;
   color: #fff;
   margin-left: auto;
-  border-bottom-right-radius: .2rem;
+  border-bottom-right-radius: 0.3vw;
 }
 
+/* input */
 .chat-input-area {
   display: flex;
-  gap: .4rem;
-  padding: .7rem;
-  border-top: 1px solid rgba(255,255,255,0.03);
-  background: rgba(15,23,42,0.85);
+  gap: 0.4vw;
+  padding: 0.75vw;
+  border-top: 1px solid rgba(255,255,255,0.02);
+  background: rgba(28,31,42,0.95);
 }
-
 #diogo-chat-input {
   flex: 1;
-  background: rgba(15,23,42,.4);
+  background: rgba(15,23,42,.25);
   border: 1px solid rgba(148,163,184,0.25);
-  border-radius: .4rem;
+  border-radius: 0.4vw;
   color: #fff;
-  padding: .35rem .5rem;
-  font-size: .7rem;
+  padding: 0.35vw 0.5vw;
+  font-size: 1vw;
+  font-family: "carving", sans-serif;
 }
-
 #diogo-chat-input:focus {
-  outline: 1px solid rgba(59,130,246,.6);
+  outline: 1px solid rgba(10,102,194,.5);
 }
-
 .chat-input-area button[type="submit"] {
   border: none;
-  background: rgba(59,130,246,.6);
+  background: #0a66c2;
   color: #fff;
-  border-radius: .4rem;
-  padding: .25rem .55rem;
+  border-radius: 0.4vw;
+  padding: 0.3vw 0.75vw;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+/* MOBILE */
+@media (max-width: 768px) {
   #diogo-chatbot {
-    left: .9rem;
-    bottom: .9rem;
+    right: 3vw;
+    bottom: 3vh;
+  }
+  #diogo-chatbot-button {
+    width: 16vw;
+    height: 16vw;
+    font-size: 8vw;
+    max-width: none;
+    max-height: none;
   }
   #diogo-chatbot-window {
-    width: min(360px, 90vw);
+    width: 90vw;
+    bottom: calc(16vw + 2vh);
+    right: 0;
   }
+  .chat-title { font-size: 4vw; }
+  .chat-subtitle { font-size: 3vw; }
+  .chat-message { font-size: 3.2vw; }
+  #diogo-chat-input { font-size: 3.2vw; }
 }
-.chat-messages {
-  max-height: 240px;
-  overflow-y: auto;
-  padding: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-.chat-message.bot {
-  background: #0f172a;
-  color: #fff;
-  padding: .5rem .75rem;
-  border-radius: .75rem;
-  align-self: flex-start;
-  max-width: 90%;
-}
-.chat-message.user {
-  background: #2563eb;
-  color: #fff;
-  padding: .5rem .75rem;
-  border-radius: .75rem;
-  align-self: flex-end;
-  max-width: 90%;
-}
+
