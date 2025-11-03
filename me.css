@@ -2114,4 +2114,99 @@ footer {
   .chat-message { font-size: 3.2vw; }
   #diogo-chat-input { font-size: 3.2vw; }
 }
+.nav-menu .lang-switch {
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: .5;
+  transition: .2s;
+}
+
+.lang-btn img {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: block;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* se no mobile o menu ficar estranho, esconde ou joga pra baixo */
+@media (max-width: 768px) {
+  .nav-menu .lang-switch {
+    margin-left: 0;
+  }
+}
+/* MOBILE: melhorar chat */
+@media (max-width: 768px) {
+  /* o botão continua igual */
+  #diogo-chatbot {
+    right: 3vw;
+    bottom: 3vh;
+  }
+
+  /* janela do chat fica FIXA na tela, não mais absoluta dentro do wrapper */
+  #diogo-chatbot-window {
+    position: fixed;
+    left: 3vw;
+    right: 3vw;
+    bottom: calc(16vw + 1.5rem); /* sobe o tamanho do botão + um espaço */
+    width: auto;
+    max-height: calc(100dvh - 18vw - 2.5rem); /* altura útil da tela */
+    border-radius: 1rem;
+    gap: 0;
+  }
+
+  /* mais espaço no header */
+  #diogo-chatbot-window .chat-header {
+    padding: 0.9rem 1rem;
+  }
+
+  /* mensagens com padding maior */
+  #diogo-chat-messages.chat-messages {
+    padding: 1rem 1rem 0.5rem;
+    gap: 0.6rem;
+  }
+
+  .chat-message {
+    font-size: 3.4vw;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.9rem;
+  }
+
+  /* área do input mais confortável e com safe-area */
+  .chat-input-area {
+    padding: 0.5rem 0.6rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.5rem;
+  }
+
+  #diogo-chat-input {
+    font-size: 3.4vw;
+    padding: 0.45rem 0.6rem;
+    border-radius: 0.6rem;
+  }
+
+  .chat-input-area button[type="submit"] {
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.6rem;
+  }
+
+  /* quando o teclado abre (JS coloca essa classe) */
+  #diogo-chatbot-window.chat-on-keyboard {
+    bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 5.5rem); /* dá mais espaço pra msgs */
+  }
+}
 
