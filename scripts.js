@@ -434,12 +434,8 @@ function initCompetitionsSection() {
   if (!WINDOW || !FORM || !MSGS) return;
 
   // histórico base
-  const history = [
-    {
-      role: "system",
-      content: "Você é o DiogoBot. Responde curto, direto e simpático sobre o Diogo Musso Coutinho, sobre o portfólio dele e sobre tecnologia que aparece no site. Se não souber, diga que não sabe."
-    }
-  ];
+  const history = []; // system vem do servidor
+
 
   function addMessage(text, from = "bot") {
     const div = document.createElement("div");
