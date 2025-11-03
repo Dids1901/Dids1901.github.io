@@ -5,8 +5,7 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// ⚠️ Lembra: esse repo está público. Tudo que estiver aqui TODO MUNDO vê.
-// Se não quiser expor nome da mãe/pai, joga isso pra um KV/banco privado.
+// texto fixo do bot
 const DIOGO_PROFILE = `
 Você é o DiogoBot, assistente do portfólio do Diogo Musso Coutinho.
 Responda SEMPRE em português do Brasil, curto e direto, tom simpático.
@@ -35,6 +34,24 @@ REGRAS
 4. Se a API estiver sem crédito, devolva exatamente: "Tô sem crédito na OpenAI agora 😅. Pede pro Diogo recarregar a conta da API."
 `;
 
+// calcula idade do Diogo com base na data atual do servidor
+function getDiogoAge() {
+  const birth = new Date(2004, 0, 19); // 19/01/2004 (mês 0 = janeiro)
+  const today = new Date();
+
+  let age = today.getFullYear() - birth.getFullYear();
+  const hasntHadBirthday =
+    today.getMonth() < birth.getMonth() ||
+    (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate());
+
+  if (hasntHadBirthday) {
+    age--;
+  }
+
+  return { age, todayISO: today.toISOString().split("T")[0] };
+}
+
+// rate limit simples por IP
 const hits = new Map();
 function tooMany(req) {
   const ip =
@@ -68,15 +85,26 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "messages é obrigatório" });
   }
 
+  // tira qualquer system que veio do front pra não confundir
+  const userMessages = messages.filter((m) => m.role !== "system");
+
+  const { age, todayISO } = getDiogoAge();
+  const dynamicAgeSystem = `
+Hoje é ${todayISO}.
+O Diogo nasceu em 19/01/2004.
+Portanto, AGORA ele tem ${age} anos.
+Se o usuário perguntar "quantos anos ele tem", "idade do Diogo" ou algo assim, responda exatamente: "Ele tem ${age} anos." e pode opcionalmente dizer a data de nascimento.
+`;
+
   try {
     const completion = await client.chat.completions.create({
-      // pode usar gpt-4o-mini ou gpt-5-nano; os dois aceitam max_completion_tokens
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: DIOGO_PROFILE },
-        ...messages,
+        { role: "system", content: dynamicAgeSystem },
+        ...userMessages,
       ],
-      max_completion_tokens: 200, // <— era max_tokens, agora é isso
+      max_completion_tokens: 200,
       temperature: 0.4,
     });
 
@@ -88,7 +116,6 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error("chat error:", err);
 
-    // se for falta de crédito / quota
     if (
       err.status === 429 ||
       err.code === "insufficient_quota" ||
